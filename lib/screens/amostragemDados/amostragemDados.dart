@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:plan3/screens/amostragemDados/componente/cards.dart';
+import 'package:plan3/screens/amostragemDados/componente/tileText.dart';
 
 class AmostragemDados extends StatefulWidget {
   @override
@@ -16,8 +18,10 @@ class _AmostragemDadosState extends State<AmostragemDados> {
         onNotification: (v) {
           if (v is ScrollUpdateNotification) {
             setState(() {
-              top -= v.scrollDelta! / 2;
-              top2 -= v.scrollDelta! / 3;
+              if (v.metrics.axis != Axis.horizontal) {
+                top -= v.scrollDelta! / 2;
+                top2 -= v.scrollDelta! / 3;
+              }
             });
           }
 
@@ -33,7 +37,7 @@ class _AmostragemDadosState extends State<AmostragemDados> {
                 left: -50,
                 top: top2,
                 child: Container(
-                  margin: EdgeInsets.only(left: 0, top: 30),
+                  margin: EdgeInsets.only(left: 0, top: 80),
                   height: 150,
                   child: Image.asset(
                     'image/alga.png',
@@ -46,7 +50,7 @@ class _AmostragemDadosState extends State<AmostragemDados> {
               Positioned(
                 top: top2 * 1.2,
                 child: Container(
-                  margin: EdgeInsets.only(left: 20, top: 80),
+                  margin: EdgeInsets.only(left: 20, top: 120),
                   height: 150,
                   child: Image.asset(
                     'image/alga.png',
@@ -60,7 +64,7 @@ class _AmostragemDadosState extends State<AmostragemDados> {
                 top: top2,
                 right: -50,
                 child: Container(
-                  margin: EdgeInsets.only(top: 50),
+                  margin: EdgeInsets.only(top: 100),
                   height: 130,
                   child: Image.asset(
                     'image/alface.png',
@@ -73,7 +77,7 @@ class _AmostragemDadosState extends State<AmostragemDados> {
               Positioned(
                 top: top,
                 child: Container(
-                  margin: EdgeInsets.only(left: 50, top: 20),
+                  margin: EdgeInsets.only(left: 50, top: 70),
                   height: 100,
                   child: Image.asset(
                     'image/fish.png',
@@ -84,7 +88,7 @@ class _AmostragemDadosState extends State<AmostragemDados> {
                 ),
               ),
               Positioned(
-                top: -80 + (top * 1.3),
+                top: -50 + (top * 1.3),
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   margin: EdgeInsets.only(
@@ -102,7 +106,7 @@ class _AmostragemDadosState extends State<AmostragemDados> {
               ListView(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: 150),
+                    margin: EdgeInsets.only(top: 200),
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
@@ -122,58 +126,82 @@ class _AmostragemDadosState extends State<AmostragemDados> {
                                 color: Colors.black26,
                               ),
                             )),
+                        TileText(valor: "Investimento Inicial"),
                         Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Text("data"),
+                          padding: const EdgeInsets.only(
+                              left: 20.0, right: 20.0, top: 20.0),
+                          child: Divider(
+                            thickness: 2,
+                          ),
+                        ),
+                        Container(
+                          padding:
+                              EdgeInsets.only(left: 20, bottom: 0, top: 10),
+                          width: MediaQuery.of(context).size.width,
+                          child: Text(
+                            "PEIXES",
+                            style: TextStyle(
+                              fontSize: 17,
+                              color: Colors.black.withAlpha(170),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 200,
+                          child: ListView(
+                            scrollDirection: Axis.horizontal,
+                            children: [
+                              Cards(),
+                              Cards(),
+                              Cards(),
+                              Cards(),
+                            ],
+                          ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Text("data"),
+                          padding: const EdgeInsets.only(
+                              left: 20.0, right: 20.0, top: 20.0),
+                          child: Divider(
+                            thickness: 2,
+                          ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Text("data"),
+                        Container(
+                          padding:
+                              EdgeInsets.only(left: 20, bottom: 0, top: 10),
+                          width: MediaQuery.of(context).size.width,
+                          child: Text(
+                            "ALFACES",
+                            style: TextStyle(
+                              fontSize: 17,
+                              color: Colors.black.withAlpha(170),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Text("data"),
+                        Container(
+                          height: 200,
+                          child: ListView(
+                            scrollDirection: Axis.horizontal,
+                            children: [
+                              Cards(),
+                              Cards(),
+                              Cards(),
+                              Cards(),
+                            ],
+                          ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Text("data"),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Text("data"),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Text("data"),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Text("data"),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Text("data"),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Text("data"),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Text("data"),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Text("data"),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Text("data"),
-                        ),
+                        TileText(valor: "Investimento Inicial"),
+                        TileText(valor: "Investimento Inicial"),
+                        TileText(valor: "Investimento Inicial"),
+                        TileText(valor: "Investimento Inicial"),
+                        TileText(valor: "Investimento Inicial"),
+                        TileText(valor: "Investimento Inicial"),
+                        TileText(valor: "Investimento Inicial"),
+                        TileText(valor: "Investimento Inicial"),
+                        TileText(valor: "Investimento Inicial"),
+                        TileText(valor: "Investimento Inicial"),
+                        TileText(valor: "Investimento Inicial"),
                       ],
                     ),
                   ),
