@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:plan3/mobx/mob_dados/mob_dados.dart';
 import 'package:plan3/screens/amostragemDados/componente/cards.dart';
+import 'package:plan3/screens/amostragemDados/componente/grafico.dart';
 import 'package:plan3/screens/amostragemDados/componente/tileText.dart';
 
 class AmostragemDados extends StatefulWidget {
@@ -8,6 +11,7 @@ class AmostragemDados extends StatefulWidget {
 }
 
 class _AmostragemDadosState extends State<AmostragemDados> {
+  final Mob_dados mob = GetIt.I<Mob_dados>();
   var top = 0.0;
   var top2 = 0.0;
   double actualHeight = 0;
@@ -191,6 +195,7 @@ class _AmostragemDadosState extends State<AmostragemDados> {
                             ],
                           ),
                         ),
+                        Grafico(dados: mob.dados_grafico),
                         TileText(valor: "Investimento Inicial"),
                         TileText(valor: "Investimento Inicial"),
                         TileText(valor: "Investimento Inicial"),
