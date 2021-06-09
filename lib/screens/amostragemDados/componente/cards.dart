@@ -45,7 +45,11 @@ class Linha extends StatelessWidget {
 }
 
 class Cards extends StatelessWidget {
-  const Cards({Key? key}) : super(key: key);
+  String ano;
+  Cards({
+    Key? key,
+    this.ano = "an",
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +71,7 @@ class Cards extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Ano 1",
+                  ano,
                   style: TextStyle(
                     color: Colors.black.withAlpha(170),
                     fontWeight: FontWeight.bold,

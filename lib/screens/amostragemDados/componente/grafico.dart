@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:get_it/get_it.dart';
+import 'package:plan3/mobx/mob_dados/mob_dados.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+
+final Mob_dados mob = GetIt.I<Mob_dados>();
 
 class Grafico extends StatefulWidget {
   List<dynamic> dados;
@@ -33,6 +37,7 @@ class _GraficoState extends State<Grafico> {
   ];
   @override
   Widget build(BuildContext context) {
+    ChartSeriesController? _chartSeriesController;
     return Container(
       decoration: BoxDecoration(
           color: Colors.white,
@@ -58,6 +63,10 @@ class _GraficoState extends State<Grafico> {
           tooltipBehavior: TooltipBehavior(enable: true),
           series: <ChartSeries<dynamic, String>>[
             ColumnSeries<dynamic, String>(
+              onRendererCreated: (ChartSeriesController controller) {
+                // Assigning the controller to the _chartSeriesController.
+                mob.chartSeriesController = controller;
+              },
               dataSource: dados.cast<dynamic>(),
               xValueMapper: (dynamic sales, _) => sales.year,
               yValueMapper: (dynamic sales, _) => sales.sales,

@@ -9,6 +9,23 @@ part of 'mob_dados.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$Mob_dados on _Mob_dados, Store {
+  final _$chartSeriesControllerAtom =
+      Atom(name: '_Mob_dados.chartSeriesController');
+
+  @override
+  ChartSeriesController? get chartSeriesController {
+    _$chartSeriesControllerAtom.reportRead();
+    return super.chartSeriesController;
+  }
+
+  @override
+  set chartSeriesController(ChartSeriesController? value) {
+    _$chartSeriesControllerAtom.reportWrite(value, super.chartSeriesController,
+        () {
+      super.chartSeriesController = value;
+    });
+  }
+
   final _$tutoAtom = Atom(name: '_Mob_dados.tuto');
 
   @override
@@ -39,22 +56,48 @@ mixin _$Mob_dados on _Mob_dados, Store {
     });
   }
 
+  final _$anos_PeixeAtom = Atom(name: '_Mob_dados.anos_Peixe');
+
+  @override
+  ObservableList<Anos> get anos_Peixe {
+    _$anos_PeixeAtom.reportRead();
+    return super.anos_Peixe;
+  }
+
+  @override
+  set anos_Peixe(ObservableList<Anos> value) {
+    _$anos_PeixeAtom.reportWrite(value, super.anos_Peixe, () {
+      super.anos_Peixe = value;
+    });
+  }
+
   final _$dados_graficoAtom = Atom(name: '_Mob_dados.dados_grafico');
 
   @override
-  ObservableList<_SalesData> get dados_grafico {
+  ObservableList<SalesData> get dados_grafico {
     _$dados_graficoAtom.reportRead();
     return super.dados_grafico;
   }
 
   @override
-  set dados_grafico(ObservableList<_SalesData> value) {
+  set dados_grafico(ObservableList<SalesData> value) {
     _$dados_graficoAtom.reportWrite(value, super.dados_grafico, () {
       super.dados_grafico = value;
     });
   }
 
   final _$_Mob_dadosActionController = ActionController(name: '_Mob_dados');
+
+  @override
+  void random() {
+    final _$actionInfo =
+        _$_Mob_dadosActionController.startAction(name: '_Mob_dados.random');
+    try {
+      return super.random();
+    } finally {
+      _$_Mob_dadosActionController.endAction(_$actionInfo);
+    }
+  }
 
   @override
   void setData(int valor) {
@@ -81,8 +124,10 @@ mixin _$Mob_dados on _Mob_dados, Store {
   @override
   String toString() {
     return '''
+chartSeriesController: ${chartSeriesController},
 tuto: ${tuto},
 data: ${data},
+anos_Peixe: ${anos_Peixe},
 dados_grafico: ${dados_grafico}
     ''';
   }
