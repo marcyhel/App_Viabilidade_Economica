@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:plan3/mobx/mob_dados/mob_dados.dart';
+import 'package:plan3/screens/coletaDados/componetnes/imput.dart';
 import 'package:plan3/screens/componentes/fade.dart';
 
 class ColetaDados extends StatefulWidget {
@@ -16,7 +17,7 @@ class _ColetaDadosState extends State<ColetaDados> {
   bool _visible1 = false;
   bool _visible2 = false;
 
-  int daley = 900;
+  int daley = -100;
   int velo = 500;
   void fadess() async {
     await Future.delayed(Duration(milliseconds: 300));
@@ -46,7 +47,7 @@ class _ColetaDadosState extends State<ColetaDados> {
     return Scaffold(
       backgroundColor: Colors.blueGrey,
       body: Container(
-        width: double.infinity,
+        // width: double.infinity,
         child: Stack(
           children: <Widget>[
             Positioned(
@@ -99,61 +100,28 @@ class _ColetaDadosState extends State<ColetaDados> {
             ),
             ListView(
               children: [
-                Fade(
-                  delay: daley + 100,
-                  mili: velo,
-                  child: Container(
-                    margin: EdgeInsets.only(top: 100),
-                    padding: EdgeInsets.all(10),
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Colors.white,
-                    ),
-                    child: Text("dd"),
+                Container(
+                  margin: EdgeInsets.only(top: 100),
+                  child: Fade(
+                    delay: daley + 100,
+                    mili: velo,
+                    child: CardImput(),
                   ),
                 ),
                 Fade(
                   delay: daley + 200,
                   mili: velo,
-                  child: Container(
-                    margin: EdgeInsets.only(top: 20),
-                    padding: EdgeInsets.all(10),
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Colors.white,
-                    ),
-                    child: Text("dd"),
-                  ),
+                  child: CardImput(),
                 ),
                 Fade(
                   delay: daley + 300,
                   mili: velo,
-                  child: Container(
-                    margin: EdgeInsets.only(top: 20),
-                    padding: EdgeInsets.all(10),
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Colors.white,
-                    ),
-                    child: Text("dd"),
-                  ),
+                  child: CardImput(),
                 ),
                 Fade(
                   delay: daley + 400,
                   mili: velo,
-                  child: Container(
-                    margin: EdgeInsets.only(top: 20),
-                    padding: EdgeInsets.all(10),
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Colors.white,
-                    ),
-                    child: Text("dd"),
-                  ),
+                  child: CardImput(),
                 ),
                 Fade(
                   delay: daley + 500,
