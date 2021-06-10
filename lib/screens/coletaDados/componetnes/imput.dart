@@ -6,15 +6,24 @@ class CardImput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.only(top: 10, bottom: 10, left: 20, right: 20),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: Colors.white,
       ),
       margin: EdgeInsets.all(10),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("ass"),
+          Text(
+            "Taxa Viabilidade",
+            style: TextStyle(
+              fontSize: 17,
+              color: Colors.black.withAlpha(170),
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(height: 10),
           TextField(
             decoration: InputDecoration(
               border: OutlineInputBorder(

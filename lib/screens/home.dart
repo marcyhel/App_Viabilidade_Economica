@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
           selectedStyle:
               TextStyle(color: Colors.white.withOpacity(0.8), fontSize: 28.0),
         ),
-        ColetaDados(), //AmostragemDados(),
+        AmostragemDados(),
       ),
     );
 
