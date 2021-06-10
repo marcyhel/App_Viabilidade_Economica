@@ -17,6 +17,13 @@ class _AmostragemDadosState extends State<AmostragemDados> {
   var top2 = 0.0;
   double actualHeight = 0;
   @override
+  void initState() {
+    setState(() {});
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: NotificationListener(
@@ -204,14 +211,6 @@ class _AmostragemDadosState extends State<AmostragemDados> {
                             ),
                           ),
                           Grafico(dados: mob.dados_grafico),
-                          GestureDetector(
-                            onTap: mob.random,
-                            child: Container(
-                              padding: EdgeInsets.all(20),
-                              color: Colors.blue,
-                              child: Text("Random()"),
-                            ),
-                          ),
                           TileText(valor: "Investimento Inicial"),
                           TileText(valor: "Investimento Inicial"),
                           TileText(valor: "Investimento Inicial"),

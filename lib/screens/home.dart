@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
 import 'package:plan3/screens/amostragemDados/amostragemDados.dart';
+import 'package:plan3/screens/coletaDados/coletaDados.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -36,12 +37,7 @@ class _HomePageState extends State<HomePage> {
           selectedStyle:
               TextStyle(color: Colors.white.withOpacity(0.8), fontSize: 28.0),
         ),
-        Scaffold(
-          backgroundColor: Colors.blueGrey,
-          body: Center(
-            child: Text('segundo'),
-          ),
-        ),
+        ColetaDados(),
       ),
     );
 

@@ -36,7 +36,7 @@ abstract class _Mob_dados with Store {
   ]);
   var cont = 5;
   @action
-  void random() {
+  Future<void> random() async {
     var aux = Random().nextInt(20) - 10;
     anos_Peixe = ObservableList<Anos>.of([
       Anos("ano 1" + "$aux"),
@@ -45,13 +45,14 @@ abstract class _Mob_dados with Store {
       Anos("ano 4" + "$aux"),
     ]);
 
-    dados_grafico.add(SalesData(cont.toString(), Random().nextInt(20) - 10));
-    cont++;
-    dados_grafico.removeAt(0);
-    chartSeriesController?.updateDataSource(
-      addedDataIndexes: <int>[dados_grafico.length - 1],
-      removedDataIndexes: <int>[0],
-    );
+    dados_grafico = ObservableList<SalesData>.of([
+      SalesData('3', Random().nextInt(20) - 10),
+      SalesData('Feb2', Random().nextInt(20) - 10),
+      SalesData('Mar2', Random().nextInt(20) - 10),
+      SalesData('Apr2', Random().nextInt(20) - 10),
+      SalesData('May2', Random().nextInt(20) - 10),
+      SalesData('Jan1', Random().nextInt(20) - 10),
+    ]);
 
     print(dados_grafico[0].sales);
   }

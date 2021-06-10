@@ -86,18 +86,14 @@ mixin _$Mob_dados on _Mob_dados, Store {
     });
   }
 
-  final _$_Mob_dadosActionController = ActionController(name: '_Mob_dados');
+  final _$randomAsyncAction = AsyncAction('_Mob_dados.random');
 
   @override
-  void random() {
-    final _$actionInfo =
-        _$_Mob_dadosActionController.startAction(name: '_Mob_dados.random');
-    try {
-      return super.random();
-    } finally {
-      _$_Mob_dadosActionController.endAction(_$actionInfo);
-    }
+  Future<void> random() {
+    return _$randomAsyncAction.run(() => super.random());
   }
+
+  final _$_Mob_dadosActionController = ActionController(name: '_Mob_dados');
 
   @override
   void setData(int valor) {
