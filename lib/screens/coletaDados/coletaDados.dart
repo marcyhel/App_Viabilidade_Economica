@@ -136,169 +136,178 @@ class _ColetaDadosState extends State<ColetaDados> {
                       ),
                       child: Column(
                         children: [
+                          Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Container(
+                              height: 7,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                color: Colors.black26,
+                              ),
+                            ),
+                          ),
                           Container(
-                            margin: EdgeInsets.only(top: 100),
+                            padding:
+                                EdgeInsets.only(left: 20, bottom: 10, top: 10),
+                            width: MediaQuery.of(context).size.width,
+                            child: Text(
+                              "INDICES",
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Colors.black.withAlpha(170),
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(top: 0),
                             child: Fade(
                               delay: daley + 100,
                               mili: velo,
-                              child: CardImput(),
+                              child: CardImput(
+                                title: "Ciclo de produção peixe",
+                              ),
                             ),
                           ),
                           Fade(
                             delay: daley + 200,
                             mili: velo,
-                            child: CardImput(),
+                            child: CardImput(
+                              title: "Ciclo de produção alface",
+                            ),
                           ),
                           Fade(
                             delay: daley + 300,
                             mili: velo,
-                            child: CardImput(),
+                            child: CardImput(
+                              title:
+                                  "Número de ciclos de produção de peixe/ano",
+                            ),
                           ),
                           Fade(
                             delay: daley + 400,
                             mili: velo,
-                            child: CardImput(),
-                          ),
-                          Fade(
-                            delay: daley + 500,
-                            mili: velo,
-                            child: Container(
-                              margin: EdgeInsets.only(top: 20),
-                              padding: EdgeInsets.all(10),
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                color: Colors.white,
-                              ),
-                              child: Text("dd"),
+                            child: CardImput(
+                              title:
+                                  "Número de ciclos de produção de alface/ano",
                             ),
                           ),
                           Fade(
-                            delay: daley + 600,
+                            delay: daley + 400,
                             mili: velo,
-                            child: Container(
-                              margin: EdgeInsets.only(top: 20),
-                              padding: EdgeInsets.all(10),
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                color: Colors.white,
-                              ),
-                              child: Text("dd"),
+                            child: CardImput(
+                              title: "Número de peixes/ciclo",
                             ),
                           ),
                           Fade(
-                            delay: daley + 700,
+                            delay: daley + 400,
                             mili: velo,
-                            child: Container(
-                              margin: EdgeInsets.only(top: 20),
-                              padding: EdgeInsets.all(10),
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                color: Colors.white,
-                              ),
-                              child: Text("dd"),
+                            child: CardImput(
+                              title: "Número de plantas/ciclo",
                             ),
                           ),
                           Fade(
-                            delay: daley + 800,
+                            delay: daley + 400,
                             mili: velo,
-                            child: Container(
-                              margin: EdgeInsets.only(top: 20),
-                              padding: EdgeInsets.all(10),
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                color: Colors.white,
-                              ),
-                              child: Text("dd"),
+                            child: CardImput(
+                              title: "Unidade comercializada/ciclo de alface",
                             ),
                           ),
                           Fade(
-                            delay: daley + 900,
+                            delay: daley + 400,
                             mili: velo,
-                            child: Container(
-                              margin: EdgeInsets.only(top: 20),
-                              padding: EdgeInsets.all(10),
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                color: Colors.white,
-                              ),
-                              child: Text("dd"),
+                            child: CardImput(
+                              title:
+                                  "Número de produtos comercializado/ciclo de alface",
                             ),
                           ),
                           Fade(
-                            delay: daley + 1000,
+                            delay: daley + 400,
                             mili: velo,
-                            child: Container(
-                              margin: EdgeInsets.only(top: 20),
-                              padding: EdgeInsets.all(10),
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                color: Colors.white,
-                              ),
-                              child: Text("dd"),
+                            child: CardImput(
+                              title: "Unidade comercializada/ciclo de peixe",
                             ),
                           ),
                           Fade(
-                            delay: daley + 1100,
+                            delay: daley + 400,
                             mili: velo,
-                            child: Container(
-                              margin: EdgeInsets.only(top: 20),
-                              padding: EdgeInsets.all(10),
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                color: Colors.white,
-                              ),
-                              child: Text("dd"),
+                            child: CardImput(
+                              title:
+                                  "Número de produtos comercializado/ciclo de alface",
                             ),
                           ),
                           Fade(
-                            delay: daley + 1200,
+                            delay: daley + 400,
                             mili: velo,
-                            child: Container(
-                              margin: EdgeInsets.only(top: 20),
-                              padding: EdgeInsets.all(10),
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                color: Colors.white,
-                              ),
-                              child: Text("dd"),
+                            child: CardImput(
+                              title: "Preço de venda peixe",
                             ),
                           ),
                           Fade(
-                            delay: daley + 1300,
+                            delay: daley + 400,
                             mili: velo,
-                            child: Container(
-                              margin: EdgeInsets.only(top: 20),
-                              padding: EdgeInsets.all(10),
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                color: Colors.white,
+                            child: CardImput(
+                              title: "Preço de venda alface",
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                left: 10.0, right: 10.0, top: 20.0),
+                            child: Divider(
+                              thickness: 2,
+                            ),
+                          ),
+                          Container(
+                            padding:
+                                EdgeInsets.only(left: 10, bottom: 10, top: 10),
+                            width: MediaQuery.of(context).size.width,
+                            child: Text(
+                              "CUSTO FIXO",
+                              style: TextStyle(
+                                fontSize: 19,
+                                color: Colors.black.withAlpha(170),
+                                fontWeight: FontWeight.bold,
                               ),
-                              child: Text("dd"),
                             ),
                           ),
                           Fade(
-                            delay: daley + 1400,
+                            delay: daley + 400,
                             mili: velo,
-                            child: Container(
-                              margin: EdgeInsets.only(top: 20),
-                              padding: EdgeInsets.all(10),
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                color: Colors.white,
-                              ),
-                              child: Text("dd"),
+                            child: CardImput(
+                              title:
+                                  "Custo com Tanque (Caixa) para criação dos Peixes",
                             ),
                           ),
+                          Fade(
+                            delay: daley + 400,
+                            mili: velo,
+                            child: CardImput(
+                              title: "Custo com material Hidráulico",
+                            ),
+                          ),
+                          Fade(
+                            delay: daley + 400,
+                            mili: velo,
+                            child: CardImput(
+                              title: "Custo com Material elétrico",
+                            ),
+                          ),
+                          Fade(
+                            delay: daley + 400,
+                            mili: velo,
+                            child: CardImput(
+                              title: "Custo com  material de automação",
+                            ),
+                          ),
+                          Fade(
+                            delay: daley + 400,
+                            mili: velo,
+                            child: CardImput(
+                              title: "Custos Fixos Extras",
+                            ),
+                          ),
+                          SizedBox(height: 50),
                         ],
                       ),
                     ),
