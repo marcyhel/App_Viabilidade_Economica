@@ -149,7 +149,90 @@ class _ColetaDadosState extends State<ColetaDados> {
                           ),
                           Container(
                             padding:
-                                EdgeInsets.only(left: 20, bottom: 10, top: 10),
+                                EdgeInsets.only(left: 10, bottom: 10, top: 10),
+                            width: MediaQuery.of(context).size.width,
+                            child: Text(
+                              "CUSTO FIXO",
+                              style: TextStyle(
+                                fontSize: 19,
+                                color: Colors.black.withAlpha(170),
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          Fade(
+                            delay: daley + 0,
+                            mili: velo,
+                            child: CardImput(
+                              title:
+                                  "Custo com Tanque (Caixa) para criação dos Peixes",
+                            ),
+                          ),
+                          Fade(
+                            delay: daley + 100,
+                            mili: velo,
+                            child: CardImput(
+                              title: "Custo com material Hidráulico",
+                            ),
+                          ),
+                          Fade(
+                            delay: daley + 200,
+                            mili: velo,
+                            child: CardImput(
+                              title: "Custo com Material elétrico",
+                            ),
+                          ),
+                          Fade(
+                            delay: daley + 300,
+                            mili: velo,
+                            child: CardImput(
+                              title: "Custo com  material de automação",
+                            ),
+                          ),
+                          Fade(
+                            delay: daley + 400,
+                            mili: velo,
+                            child: CardImput(
+                              title: "Custos Fixos Extras",
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                left: 10.0, right: 10.0, top: 20.0),
+                            child: Divider(
+                              thickness: 2,
+                            ),
+                          ),
+                          Container(
+                            padding:
+                                EdgeInsets.only(left: 10, bottom: 10, top: 10),
+                            width: MediaQuery.of(context).size.width,
+                            child: Text(
+                              "CUSTO VARIAVEL POR CICLO",
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Colors.black.withAlpha(170),
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          Fade(
+                            delay: daley + 200,
+                            mili: velo,
+                            child: CardImput(
+                              title: "Custo com Energia",
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                left: 10.0, right: 10.0, top: 20.0),
+                            child: Divider(
+                              thickness: 2,
+                            ),
+                          ),
+                          Container(
+                            padding:
+                                EdgeInsets.only(left: 10, bottom: 10, top: 10),
                             width: MediaQuery.of(context).size.width,
                             child: Text(
                               "INDICES",
@@ -249,62 +332,6 @@ class _ColetaDadosState extends State<ColetaDados> {
                             mili: velo,
                             child: CardImput(
                               title: "Preço de venda alface",
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                left: 10.0, right: 10.0, top: 20.0),
-                            child: Divider(
-                              thickness: 2,
-                            ),
-                          ),
-                          Container(
-                            padding:
-                                EdgeInsets.only(left: 10, bottom: 10, top: 10),
-                            width: MediaQuery.of(context).size.width,
-                            child: Text(
-                              "CUSTO FIXO",
-                              style: TextStyle(
-                                fontSize: 19,
-                                color: Colors.black.withAlpha(170),
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                          Fade(
-                            delay: daley + 400,
-                            mili: velo,
-                            child: CardImput(
-                              title:
-                                  "Custo com Tanque (Caixa) para criação dos Peixes",
-                            ),
-                          ),
-                          Fade(
-                            delay: daley + 400,
-                            mili: velo,
-                            child: CardImput(
-                              title: "Custo com material Hidráulico",
-                            ),
-                          ),
-                          Fade(
-                            delay: daley + 400,
-                            mili: velo,
-                            child: CardImput(
-                              title: "Custo com Material elétrico",
-                            ),
-                          ),
-                          Fade(
-                            delay: daley + 400,
-                            mili: velo,
-                            child: CardImput(
-                              title: "Custo com  material de automação",
-                            ),
-                          ),
-                          Fade(
-                            delay: daley + 400,
-                            mili: velo,
-                            child: CardImput(
-                              title: "Custos Fixos Extras",
                             ),
                           ),
                           SizedBox(height: 50),

@@ -25,18 +25,36 @@ abstract class _Mob_dados with Store {
     Anos("ano 3"),
     Anos("ano 4"),
   ]);
-  @observable
-  var dados_grafico = ObservableList<SalesData>.of([
-    SalesData('3', -10),
-    SalesData('Feb2', 20),
-    SalesData('Mar2', 30),
-    SalesData('Apr2', -28),
-    SalesData('May2', 10),
-    SalesData('Jan1', 30),
-  ]);
   var cont = 5;
+  @observable
+  var dados_grafico = ObservableList<SalesData>.of([]);
+  @computed
+  List<SalesData> get graf => dados_grafico;
+
+  @observable
+  double producaoPeixe = 1;
+  @observable
+  double producaoAlface = 1;
+  @observable
+  double ciclosProducaoPeixeAno = 1;
+  @observable
+  double ciclosProducaoAlfaceAno = 1;
+  @observable
+  double numeroPeixeCiclo = 1;
+  @observable
+  double numeroAlfaceCiclo = 1;
+  @observable
+  double unidadeComercializadaCicloAlface = 1;
+  @observable
+  double unidadeComercializadaCicloPeixe = 1;
+  @observable
+  double numeroProdutosComercializadoCicloAlface = 1;
+  @observable
+  double numeroProdutosComercializadoCicloPeixe = 1;
+
   @action
   Future<void> random() async {
+    print("ddd");
     var aux = Random().nextInt(20) - 10;
     anos_Peixe = ObservableList<Anos>.of([
       Anos("ano 1" + "$aux"),
@@ -53,7 +71,7 @@ abstract class _Mob_dados with Store {
       SalesData('May2', Random().nextInt(20) - 10),
       SalesData('Jan1', Random().nextInt(20) - 10),
     ]);
-
+    chartSeriesController?.updateDataSource(addedDataIndexes: [0]);
     print(dados_grafico[0].sales);
   }
 
