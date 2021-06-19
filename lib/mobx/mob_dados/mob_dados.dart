@@ -9,11 +9,14 @@ class Mob_dados = _Mob_dados with _$Mob_dados;
 
 abstract class _Mob_dados with Store {
   _Mob_dados() {
+    autorun((_) {
+      print(custoTanquePeixe);
+    });
     print(tuto);
   }
   @observable
   ChartSeriesController? chartSeriesController;
-
+  String erro = "não pode usar ,(virgula)";
   @observable
   int tuto = 1;
   @observable
@@ -51,6 +54,239 @@ abstract class _Mob_dados with Store {
   double numeroProdutosComercializadoCicloAlface = 1;
   @observable
   double numeroProdutosComercializadoCicloPeixe = 1;
+  @observable
+  double precoPeixe = 1;
+  @observable
+  double precoAlface = 1;
+  @observable
+  double custoEnergia = 1;
+  @observable
+  double custoMaterialHidraulico = 1;
+  @observable
+  double custoMaterialEletrico = 1;
+  @observable
+  double custoMaterialAltomacao = 1;
+  @observable
+  double custoFixoExtra = 1;
+  @observable
+  double custoTanquePeixe = 1;
+
+  @observable
+  bool booProducaoPeixe = false;
+  @observable
+  bool booProducaoAlface = false;
+  @observable
+  bool booCiclosProducaoPeixeAno = false;
+  @observable
+  bool booCiclosProducaoAlfaceAno = false;
+  @observable
+  bool booNumeroPeixeCiclo = false;
+  @observable
+  bool booNumeroAlfaceCiclo = false;
+  @observable
+  bool booUnidadeComercializadaCicloAlface = false;
+  @observable
+  bool booUnidadeComercializadaCicloPeixe = false;
+  @observable
+  bool booNumeroProdutosComercializadoCicloAlface = false;
+  @observable
+  bool booNumeroProdutosComercializadoCicloPeixe = false;
+  @observable
+  bool booPrecoPeixe = false;
+  @observable
+  bool booPrecoAlface = false;
+  @observable
+  bool booCustoEnergia = false;
+  @observable
+  bool booCustoMaterialHidraulico = false;
+  @observable
+  bool booCustoMaterialEletrico = false;
+  @observable
+  bool booCustoMaterialAltomacao = false;
+  @observable
+  bool booCustoFixoExtra = false;
+  @observable
+  bool booCustoTanquePeixe = false;
+
+  @action
+  void escreveProducaoPeixe(String valor) {
+    try {
+      producaoPeixe = double.parse(valor);
+      booProducaoPeixe = false;
+    } catch (e) {
+      booProducaoPeixe = true;
+    }
+  }
+
+  @action
+  void escreveProducaoAlface(String valor) {
+    try {
+      producaoAlface = double.parse(valor);
+      booProducaoAlface = false;
+    } catch (e) {
+      booProducaoAlface = true;
+    }
+  }
+
+  @action
+  void escreveCiclosProducaoPeixeAno(String valor) {
+    try {
+      ciclosProducaoPeixeAno = double.parse(valor);
+      booCiclosProducaoPeixeAno = false;
+    } catch (e) {
+      booCiclosProducaoPeixeAno = true;
+    }
+  }
+
+  @action
+  void escreveCiclosProducaoAlfaceAno(String valor) {
+    try {
+      ciclosProducaoAlfaceAno = double.parse(valor);
+      booCiclosProducaoAlfaceAno = false;
+    } catch (e) {
+      booCiclosProducaoAlfaceAno = true;
+    }
+  }
+
+  @action
+  void escreveNumeroPeixeCiclo(String valor) {
+    try {
+      numeroPeixeCiclo = double.parse(valor);
+      booNumeroPeixeCiclo = false;
+    } catch (e) {
+      booNumeroPeixeCiclo = true;
+    }
+  }
+
+  @action
+  void escreveNumeroAlfaceCiclo(String valor) {
+    try {
+      numeroAlfaceCiclo = double.parse(valor);
+      booNumeroAlfaceCiclo = false;
+    } catch (e) {
+      booNumeroAlfaceCiclo = true;
+    }
+  }
+
+  @action
+  void escreveUnidadeComercializadaCicloAlface(String valor) {
+    try {
+      unidadeComercializadaCicloAlface = double.parse(valor);
+      booUnidadeComercializadaCicloAlface = false;
+    } catch (e) {
+      booUnidadeComercializadaCicloAlface = true;
+    }
+  }
+
+  @action
+  void escreveUnidadeComercializadaCicloPeixe(String valor) {
+    try {
+      unidadeComercializadaCicloPeixe = double.parse(valor);
+      booUnidadeComercializadaCicloPeixe = false;
+    } catch (e) {
+      booUnidadeComercializadaCicloPeixe = true;
+    }
+  }
+
+  @action
+  void escreveNumeroProdutosComercializadoCicloAlface(String valor) {
+    try {
+      numeroProdutosComercializadoCicloAlface = double.parse(valor);
+      booNumeroProdutosComercializadoCicloAlface = false;
+    } catch (e) {
+      booNumeroProdutosComercializadoCicloAlface = true;
+    }
+  }
+
+  @action
+  void escreveNumeroProdutosComercializadoCicloPeixe(String valor) {
+    try {
+      numeroProdutosComercializadoCicloPeixe = double.parse(valor);
+      booNumeroProdutosComercializadoCicloPeixe = false;
+    } catch (e) {
+      booNumeroProdutosComercializadoCicloPeixe = true;
+    }
+  }
+
+  @action
+  void escrevePrecoPeixe(String valor) {
+    try {
+      precoPeixe = double.parse(valor);
+      booPrecoPeixe = false;
+    } catch (e) {
+      booPrecoPeixe = true;
+    }
+  }
+
+  @action
+  void escrevePrecoAlface(String valor) {
+    try {
+      precoAlface = double.parse(valor);
+      booPrecoAlface = false;
+    } catch (e) {
+      booPrecoAlface = true;
+    }
+  }
+
+  @action
+  void escreveCustoEnergia(String valor) {
+    try {
+      custoEnergia = double.parse(valor);
+      booCustoEnergia = false;
+    } catch (e) {
+      booCustoEnergia = true;
+    }
+  }
+
+  @action
+  void escreveCustoMaterialHidraulico(String valor) {
+    try {
+      custoMaterialHidraulico = double.parse(valor);
+      booCustoMaterialHidraulico = false;
+    } catch (e) {
+      booCustoMaterialHidraulico = true;
+    }
+  }
+
+  @action
+  void escreveCustoMaterialEletrico(String valor) {
+    try {
+      custoMaterialEletrico = double.parse(valor);
+      booCustoMaterialEletrico = false;
+    } catch (e) {
+      booCustoMaterialEletrico = true;
+    }
+  }
+
+  @action
+  void escreveCustoMaterialAltomacao(String valor) {
+    try {
+      custoMaterialAltomacao = double.parse(valor);
+      booCustoMaterialAltomacao = false;
+    } catch (e) {
+      booCustoMaterialAltomacao = true;
+    }
+  }
+
+  @action
+  void escreveCustoFixoExtra(String valor) {
+    try {
+      custoFixoExtra = double.parse(valor);
+      booCustoFixoExtra = false;
+    } catch (e) {
+      booCustoFixoExtra = true;
+    }
+  }
+
+  @action
+  void escreveCustoTanquePeixe(String valor) {
+    try {
+      custoTanquePeixe = double.parse(valor);
+      booCustoTanquePeixe = false;
+    } catch (e) {
+      booCustoTanquePeixe = true;
+    }
+  }
 
   @action
   Future<void> random() async {

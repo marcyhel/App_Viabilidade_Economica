@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 import 'package:plan3/mobx/mob_dados/mob_dados.dart';
 import 'package:plan3/screens/coletaDados/componetnes/imput.dart';
@@ -134,209 +135,277 @@ class _ColetaDadosState extends State<ColetaDados> {
                             topRight: Radius.circular(30)),
                         color: Colors.white,
                       ),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(20.0),
-                            child: Container(
-                              height: 7,
-                              width: 50,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                color: Colors.black26,
+                      child: Observer(builder: (_) {
+                        return Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Container(
+                                height: 7,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                  color: Colors.black26,
+                                ),
                               ),
                             ),
-                          ),
-                          Container(
-                            padding:
-                                EdgeInsets.only(left: 10, bottom: 10, top: 10),
-                            width: MediaQuery.of(context).size.width,
-                            child: Text(
-                              "CUSTO FIXO",
-                              style: TextStyle(
-                                fontSize: 19,
-                                color: Colors.black.withAlpha(170),
-                                fontWeight: FontWeight.bold,
+                            Container(
+                              padding: EdgeInsets.only(
+                                  left: 10, bottom: 10, top: 10),
+                              width: MediaQuery.of(context).size.width,
+                              child: Text(
+                                "CUSTO FIXO",
+                                style: TextStyle(
+                                  fontSize: 19,
+                                  color: Colors.black.withAlpha(170),
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
-                          ),
-                          Fade(
-                            delay: daley + 0,
-                            mili: velo,
-                            child: CardImput(
-                              title:
-                                  "Custo com Tanque (Caixa) para criação dos Peixes",
+                            Fade(
+                              delay: daley + 0,
+                              mili: velo,
+                              child: Observer(builder: (_) {
+                                return CardImput(
+                                  erro: mob.booCustoTanquePeixe,
+                                  escreve: mob.escreveCustoTanquePeixe,
+                                  title:
+                                      "Custo com Tanque (Caixa) para criação dos Peixes",
+                                );
+                              }),
                             ),
-                          ),
-                          Fade(
-                            delay: daley + 100,
-                            mili: velo,
-                            child: CardImput(
-                              title: "Custo com material Hidráulico",
-                            ),
-                          ),
-                          Fade(
-                            delay: daley + 200,
-                            mili: velo,
-                            child: CardImput(
-                              title: "Custo com Material elétrico",
-                            ),
-                          ),
-                          Fade(
-                            delay: daley + 300,
-                            mili: velo,
-                            child: CardImput(
-                              title: "Custo com  material de automação",
-                            ),
-                          ),
-                          Fade(
-                            delay: daley + 400,
-                            mili: velo,
-                            child: CardImput(
-                              title: "Custos Fixos Extras",
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                left: 10.0, right: 10.0, top: 20.0),
-                            child: Divider(
-                              thickness: 2,
-                            ),
-                          ),
-                          Container(
-                            padding:
-                                EdgeInsets.only(left: 10, bottom: 10, top: 10),
-                            width: MediaQuery.of(context).size.width,
-                            child: Text(
-                              "CUSTO VARIAVEL POR CICLO",
-                              style: TextStyle(
-                                fontSize: 17,
-                                color: Colors.black.withAlpha(170),
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                          Fade(
-                            delay: daley + 200,
-                            mili: velo,
-                            child: CardImput(
-                              title: "Custo com Energia",
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                left: 10.0, right: 10.0, top: 20.0),
-                            child: Divider(
-                              thickness: 2,
-                            ),
-                          ),
-                          Container(
-                            padding:
-                                EdgeInsets.only(left: 10, bottom: 10, top: 10),
-                            width: MediaQuery.of(context).size.width,
-                            child: Text(
-                              "INDICES",
-                              style: TextStyle(
-                                fontSize: 17,
-                                color: Colors.black.withAlpha(170),
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(top: 0),
-                            child: Fade(
+                            Fade(
                               delay: daley + 100,
                               mili: velo,
-                              child: CardImput(
-                                title: "Ciclo de produção peixe",
+                              child: Observer(builder: (_) {
+                                return CardImput(
+                                  erro: mob.booCustoMaterialHidraulico,
+                                  escreve: mob.escreveCustoMaterialHidraulico,
+                                  title: "Custo com material Hidráulico",
+                                );
+                              }),
+                            ),
+                            Fade(
+                              delay: daley + 200,
+                              mili: velo,
+                              child: Observer(builder: (_) {
+                                return CardImput(
+                                  erro: mob.booCustoMaterialEletrico,
+                                  escreve: mob.escreveCustoMaterialEletrico,
+                                  title: "Custo com Material elétrico",
+                                );
+                              }),
+                            ),
+                            Fade(
+                              delay: daley + 300,
+                              mili: velo,
+                              child: Observer(builder: (_) {
+                                return CardImput(
+                                  erro: mob.booCustoMaterialAltomacao,
+                                  escreve: mob.escreveCustoMaterialAltomacao,
+                                  title: "Custo com  material de automação",
+                                );
+                              }),
+                            ),
+                            Fade(
+                              delay: daley + 400,
+                              mili: velo,
+                              child: Observer(builder: (_) {
+                                return CardImput(
+                                  erro: mob.booCustoFixoExtra,
+                                  escreve: mob.escreveCustoFixoExtra,
+                                  title: "Custos Fixos Extras",
+                                );
+                              }),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 10.0, right: 10.0, top: 20.0),
+                              child: Divider(
+                                thickness: 2,
                               ),
                             ),
-                          ),
-                          Fade(
-                            delay: daley + 200,
-                            mili: velo,
-                            child: CardImput(
-                              title: "Ciclo de produção alface",
+                            Container(
+                              padding: EdgeInsets.only(
+                                  left: 10, bottom: 10, top: 10),
+                              width: MediaQuery.of(context).size.width,
+                              child: Text(
+                                "CUSTO VARIAVEL POR CICLO",
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  color: Colors.black.withAlpha(170),
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ),
-                          ),
-                          Fade(
-                            delay: daley + 300,
-                            mili: velo,
-                            child: CardImput(
-                              title:
-                                  "Número de ciclos de produção de peixe/ano",
+                            Fade(
+                              delay: daley + 200,
+                              mili: velo,
+                              child: Observer(builder: (_) {
+                                return CardImput(
+                                  erro: mob.booCustoEnergia,
+                                  escreve: mob.escreveCustoEnergia,
+                                  title: "Custo com Energia",
+                                );
+                              }),
                             ),
-                          ),
-                          Fade(
-                            delay: daley + 400,
-                            mili: velo,
-                            child: CardImput(
-                              title:
-                                  "Número de ciclos de produção de alface/ano",
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 10.0, right: 10.0, top: 20.0),
+                              child: Divider(
+                                thickness: 2,
+                              ),
                             ),
-                          ),
-                          Fade(
-                            delay: daley + 400,
-                            mili: velo,
-                            child: CardImput(
-                              title: "Número de peixes/ciclo",
+                            Container(
+                              padding: EdgeInsets.only(
+                                  left: 10, bottom: 10, top: 10),
+                              width: MediaQuery.of(context).size.width,
+                              child: Text(
+                                "INDICES",
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  color: Colors.black.withAlpha(170),
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ),
-                          ),
-                          Fade(
-                            delay: daley + 400,
-                            mili: velo,
-                            child: CardImput(
-                              title: "Número de plantas/ciclo",
+                            Container(
+                              margin: EdgeInsets.only(top: 0),
+                              child: Fade(
+                                delay: daley + 100,
+                                mili: velo,
+                                child: Observer(builder: (_) {
+                                  return CardImput(
+                                    erro: mob.booProducaoPeixe,
+                                    escreve: mob.escreveProducaoPeixe,
+                                    title: "Ciclo de produção peixe",
+                                  );
+                                }),
+                              ),
                             ),
-                          ),
-                          Fade(
-                            delay: daley + 400,
-                            mili: velo,
-                            child: CardImput(
-                              title: "Unidade comercializada/ciclo de alface",
+                            Fade(
+                              delay: daley + 200,
+                              mili: velo,
+                              child: Observer(builder: (_) {
+                                return CardImput(
+                                  erro: mob.booProducaoAlface,
+                                  escreve: mob.escreveProducaoAlface,
+                                  title: "Ciclo de produção alface",
+                                );
+                              }),
                             ),
-                          ),
-                          Fade(
-                            delay: daley + 400,
-                            mili: velo,
-                            child: CardImput(
-                              title:
-                                  "Número de produtos comercializado/ciclo de alface",
+                            Fade(
+                              delay: daley + 300,
+                              mili: velo,
+                              child: Observer(builder: (_) {
+                                return CardImput(
+                                  erro: mob.booCiclosProducaoPeixeAno,
+                                  escreve: mob.escreveCiclosProducaoPeixeAno,
+                                  title:
+                                      "Número de ciclos de produção de peixe/ano",
+                                );
+                              }),
                             ),
-                          ),
-                          Fade(
-                            delay: daley + 400,
-                            mili: velo,
-                            child: CardImput(
-                              title: "Unidade comercializada/ciclo de peixe",
+                            Fade(
+                              delay: daley + 400,
+                              mili: velo,
+                              child: Observer(builder: (_) {
+                                return CardImput(
+                                  erro: mob.booCiclosProducaoAlfaceAno,
+                                  escreve: mob.escreveCiclosProducaoAlfaceAno,
+                                  title:
+                                      "Número de ciclos de produção de alface/ano",
+                                );
+                              }),
                             ),
-                          ),
-                          Fade(
-                            delay: daley + 400,
-                            mili: velo,
-                            child: CardImput(
-                              title:
-                                  "Número de produtos comercializado/ciclo de alface",
+                            Fade(
+                              delay: daley + 400,
+                              mili: velo,
+                              child: Observer(builder: (_) {
+                                return CardImput(
+                                  erro: mob.booNumeroPeixeCiclo,
+                                  escreve: mob.escreveNumeroPeixeCiclo,
+                                  title: "Número de peixes/ciclo",
+                                );
+                              }),
                             ),
-                          ),
-                          Fade(
-                            delay: daley + 400,
-                            mili: velo,
-                            child: CardImput(
-                              title: "Preço de venda peixe",
+                            Fade(
+                              delay: daley + 400,
+                              mili: velo,
+                              child: Observer(builder: (_) {
+                                return CardImput(
+                                  erro: mob.booNumeroAlfaceCiclo,
+                                  escreve: mob.escreveNumeroAlfaceCiclo,
+                                  title: "Número de plantas/ciclo",
+                                );
+                              }),
                             ),
-                          ),
-                          Fade(
-                            delay: daley + 400,
-                            mili: velo,
-                            child: CardImput(
-                              title: "Preço de venda alface",
+                            Fade(
+                              delay: daley + 400,
+                              mili: velo,
+                              child: Observer(builder: (_) {
+                                return CardImput(
+                                  erro: mob.booUnidadeComercializadaCicloAlface,
+                                  escreve: mob
+                                      .escreveUnidadeComercializadaCicloAlface,
+                                  title:
+                                      "Unidade comercializada/ciclo de alface",
+                                );
+                              }),
                             ),
-                          ),
-                          SizedBox(height: 50),
-                        ],
-                      ),
+                            Fade(
+                              delay: daley + 400,
+                              mili: velo,
+                              child: Observer(builder: (_) {
+                                return CardImput(
+                                  erro: mob
+                                      .booNumeroProdutosComercializadoCicloAlface,
+                                  escreve: mob
+                                      .escreveNumeroProdutosComercializadoCicloAlface,
+                                  title:
+                                      "Número de produtos comercializado/ciclo de alface",
+                                );
+                              }),
+                            ),
+                            Fade(
+                              delay: daley + 400,
+                              mili: velo,
+                              child: Observer(builder: (_) {
+                                return CardImput(
+                                  erro: mob.booUnidadeComercializadaCicloPeixe,
+                                  escreve: mob
+                                      .escreveUnidadeComercializadaCicloPeixe,
+                                  title:
+                                      "Unidade comercializada/ciclo de peixe",
+                                );
+                              }),
+                            ),
+                            Fade(
+                              delay: daley + 400,
+                              mili: velo,
+                              child: Observer(builder: (_) {
+                                return CardImput(
+                                  erro: mob.booPrecoPeixe,
+                                  escreve: mob.escrevePrecoPeixe,
+                                  title: "Preço de venda peixe",
+                                );
+                              }),
+                            ),
+                            Fade(
+                              delay: daley + 400,
+                              mili: velo,
+                              child: Observer(builder: (_) {
+                                return CardImput(
+                                  erro: mob.booPrecoAlface,
+                                  escreve: mob.escrevePrecoAlface,
+                                  title: "Preço de venda alface",
+                                );
+                              }),
+                            ),
+                            SizedBox(height: 50),
+                          ],
+                        );
+                      }),
                     ),
                   ),
                 ],

@@ -248,17 +248,6 @@ class _AmostragemDadosState extends State<AmostragemDados> {
                             Observer(builder: (_) {
                               return Grafico(dados: mob.dados_grafico);
                             }),
-                            TileText(valor: "Investimento Inicial"),
-                            TileText(valor: "Investimento Inicial"),
-                            TileText(valor: "Investimento Inicial"),
-                            TileText(valor: "Investimento Inicial"),
-                            TileText(valor: "Investimento Inicial"),
-                            TileText(valor: "Investimento Inicial"),
-                            TileText(valor: "Investimento Inicial"),
-                            TileText(valor: "Investimento Inicial"),
-                            TileText(valor: "Investimento Inicial"),
-                            TileText(valor: "Investimento Inicial"),
-                            TileText(valor: "Investimento Inicial"),
                           ],
                         ),
                       ),
