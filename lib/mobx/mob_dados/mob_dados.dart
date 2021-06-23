@@ -16,7 +16,7 @@ abstract class _Mob_dados with Store {
   }
   @observable
   ChartSeriesController? chartSeriesController;
-  String erro = "não pode usar ,(virgula)";
+  String erro = "Use pontos no lugar de virgulas";
   @observable
   int tuto = 1;
   @observable
@@ -33,6 +33,13 @@ abstract class _Mob_dados with Store {
   var dados_grafico = ObservableList<SalesData>.of([]);
   @computed
   List<SalesData> get graf => dados_grafico;
+
+  @observable
+  double taxaDesenvestimento = 0.1;
+  @observable
+  double periodoAnalise = 5;
+  @observable
+  double tma = 10;
 
   @observable
   double producaoPeixe = 1;
@@ -70,6 +77,8 @@ abstract class _Mob_dados with Store {
   double custoFixoExtra = 1;
   @observable
   double custoTanquePeixe = 1;
+  @observable
+  double taxaReinvestimentoFluxoCaixa = 1;
 
   @observable
   bool booProducaoPeixe = false;
@@ -107,6 +116,8 @@ abstract class _Mob_dados with Store {
   bool booCustoFixoExtra = false;
   @observable
   bool booCustoTanquePeixe = false;
+  @observable
+  bool booTaxaReinvestimentoFluxoCaixa = false;
 
   @action
   void escreveProducaoPeixe(String valor) {
@@ -285,6 +296,16 @@ abstract class _Mob_dados with Store {
       booCustoTanquePeixe = false;
     } catch (e) {
       booCustoTanquePeixe = true;
+    }
+  }
+
+  @action
+  void escreveTaxaReinvestimentoFluxoCaixa(String valor) {
+    try {
+      taxaReinvestimentoFluxoCaixa = double.parse(valor);
+      booTaxaReinvestimentoFluxoCaixa = false;
+    } catch (e) {
+      booTaxaReinvestimentoFluxoCaixa = true;
     }
   }
 

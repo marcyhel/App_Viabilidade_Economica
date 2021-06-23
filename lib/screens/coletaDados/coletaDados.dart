@@ -402,6 +402,19 @@ class _ColetaDadosState extends State<ColetaDados> {
                                 );
                               }),
                             ),
+                            Fade(
+                              delay: daley + 400,
+                              mili: velo,
+                              child: Observer(builder: (_) {
+                                return CardImput(
+                                  erro: mob.booTaxaReinvestimentoFluxoCaixa,
+                                  escreve:
+                                      mob.escreveTaxaReinvestimentoFluxoCaixa,
+                                  title:
+                                      "Taxa de reinvestimento dos fluxos de caixa",
+                                );
+                              }),
+                            ),
                             SizedBox(height: 50),
                           ],
                         );
