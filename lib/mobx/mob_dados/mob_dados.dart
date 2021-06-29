@@ -28,11 +28,68 @@ abstract class _Mob_dados with Store {
     Anos("ano 3"),
     Anos("ano 4"),
   ]);
+  var anos_Alface = ObservableList<Anos>.of([
+    Anos("ano 1"),
+    Anos("ano 2"),
+    Anos("ano 3"),
+    Anos("ano 4"),
+  ]);
   var cont = 5;
   @observable
   var dados_grafico = ObservableList<SalesData>.of([]);
   @computed
   List<SalesData> get graf => dados_grafico;
+
+  @observable
+  double investimentoInicial = 0;
+  @observable
+  double capitalGiro = 0;
+  @observable
+  double vendaEquipamentos = 0;
+  @observable
+  double valorResidual = 0;
+
+  @action
+  void calcular() {
+    investimentoInicial = custoTanquePeixe +
+        custoMaterialEletrico +
+        custoMaterialHidraulico +
+        custoMaterialAltomacao +
+        custoFixoExtra;
+
+    capitalGiro = (1 + 0.1) * custoEnergia;
+
+    vendaEquipamentos = investimentoInicial * taxaDesenvestimento;
+    valorResidual = capitalGiro + vendaEquipamentos;
+
+    anos_Peixe[0].anual = ciclosProducaoPeixeAno * numeroPeixeCiclo;
+    anos_Peixe[0].venda = precoPeixe;
+    anos_Peixe[0].receita =
+        ((ciclosProducaoPeixeAno * numeroPeixeCiclo) * precoPeixe);
+    anos_Peixe[0].total = capitalGiro * ciclosProducaoPeixeAno;
+
+    anos_Alface[0].anual = ciclosProducaoAlfaceAno * numeroAlfaceCiclo;
+    anos_Alface[0].venda = precoAlface;
+    anos_Alface[0].receita =
+        ((ciclosProducaoAlfaceAno * numeroAlfaceCiclo) * precoAlface);
+    anos_Alface[0].total = capitalGiro * ciclosProducaoAlfaceAno;
+
+    for (var i = 0; i < periodoAnalise - 1; i++) {
+      anos_Peixe[i + 1].anual = anos_Peixe[0].anual;
+      anos_Peixe[i + 1].venda = anos_Peixe[0].venda;
+      anos_Peixe[i + 1].receita = anos_Peixe[0].receita;
+      anos_Peixe[i + 1].total = anos_Peixe[0].total;
+
+      anos_Alface[i + 1].anual = anos_Alface[0].anual;
+      anos_Alface[i + 1].venda = anos_Alface[0].venda;
+      anos_Alface[i + 1].receita = anos_Alface[0].receita;
+      anos_Alface[i + 1].total = anos_Alface[0].total;
+    }
+
+    print(investimentoInicial);
+    print(capitalGiro);
+    print(vendaEquipamentos);
+  }
 
   @observable
   double taxaDesenvestimento = 0.1;
@@ -42,43 +99,43 @@ abstract class _Mob_dados with Store {
   double tma = 10;
 
   @observable
-  double producaoPeixe = 1;
+  double producaoPeixe = 0;
   @observable
-  double producaoAlface = 1;
+  double producaoAlface = 0;
   @observable
-  double ciclosProducaoPeixeAno = 1;
+  double ciclosProducaoPeixeAno = 0;
   @observable
-  double ciclosProducaoAlfaceAno = 1;
+  double ciclosProducaoAlfaceAno = 0;
   @observable
-  double numeroPeixeCiclo = 1;
+  double numeroPeixeCiclo = 0;
   @observable
-  double numeroAlfaceCiclo = 1;
+  double numeroAlfaceCiclo = 0;
   @observable
-  double unidadeComercializadaCicloAlface = 1;
+  double unidadeComercializadaCicloAlface = 0;
   @observable
-  double unidadeComercializadaCicloPeixe = 1;
+  double unidadeComercializadaCicloPeixe = 0;
   @observable
-  double numeroProdutosComercializadoCicloAlface = 1;
+  double numeroProdutosComercializadoCicloAlface = 0;
   @observable
-  double numeroProdutosComercializadoCicloPeixe = 1;
+  double numeroProdutosComercializadoCicloPeixe = 0;
   @observable
-  double precoPeixe = 1;
+  double precoPeixe = 0;
   @observable
-  double precoAlface = 1;
+  double precoAlface = 0;
   @observable
-  double custoEnergia = 1;
+  double custoEnergia = 0;
   @observable
-  double custoMaterialHidraulico = 1;
+  double custoMaterialHidraulico = 0;
   @observable
-  double custoMaterialEletrico = 1;
+  double custoMaterialEletrico = 0;
   @observable
-  double custoMaterialAltomacao = 1;
+  double custoMaterialAltomacao = 0;
   @observable
-  double custoFixoExtra = 1;
+  double custoFixoExtra = 0;
   @observable
-  double custoTanquePeixe = 1;
+  double custoTanquePeixe = 0;
   @observable
-  double taxaReinvestimentoFluxoCaixa = 1;
+  double taxaReinvestimentoFluxoCaixa = 0;
 
   @observable
   bool booProducaoPeixe = false;
@@ -347,5 +404,15 @@ class SalesData {
 
 class Anos {
   final String ano;
-  Anos(this.ano);
+  double anual;
+  double venda;
+  double receita;
+  double total;
+  Anos(
+    this.ano, {
+    this.anual = 0,
+    this.venda = 0,
+    this.receita = 0,
+    this.total = 0,
+  });
 }

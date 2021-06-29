@@ -4,6 +4,7 @@ class Linha extends StatelessWidget {
   String nome;
   String valor;
   double larg = 250;
+
   Linha({
     Key? key,
     required this.nome,
@@ -13,7 +14,7 @@ class Linha extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: larg,
+      width: MediaQuery.of(context).size.width / 1.5,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -46,9 +47,17 @@ class Linha extends StatelessWidget {
 
 class Cards extends StatelessWidget {
   String ano;
+  double anual;
+  double venda;
+  double receita;
+  double total;
   Cards({
     Key? key,
     this.ano = "an",
+    required this.anual,
+    required this.venda,
+    required this.receita,
+    required this.total,
   }) : super(key: key);
 
   @override
@@ -77,10 +86,10 @@ class Cards extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Linha(nome: "Prod. Anual (Un.)", valor: '360.00'),
-                Linha(nome: "Preço de Venda (S/Un.)", valor: '0.70'),
-                Linha(nome: "Receita (RS)", valor: '252.00'),
-                Linha(nome: "Custo Total Anual", valor: '1019.00'),
+                Linha(nome: "Prod. Anual (Un.)", valor: anual.toString()),
+                Linha(nome: "Preço de Venda (S/Un.)", valor: venda.toString()),
+                Linha(nome: "Receita (RS)", valor: receita.toString()),
+                Linha(nome: "Custo Total Anual", valor: total.toString()),
               ],
             ),
           )),

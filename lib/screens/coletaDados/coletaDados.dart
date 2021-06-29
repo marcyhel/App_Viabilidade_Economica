@@ -21,9 +21,9 @@ class _ColetaDadosState extends State<ColetaDados> {
   int daley = 400;
   int velo = 500;
 
-  var top = 0.0;
-  var top2 = 0.0;
-  var top3 = 0.0;
+  var top = -30.0;
+  var top2 = -30.0;
+  var top3 = -30.0;
   double actualHeight = 0;
   void fadess() async {
     await Future.delayed(Duration(milliseconds: 300));
@@ -59,7 +59,7 @@ class _ColetaDadosState extends State<ColetaDados> {
               if (v.metrics.axis != Axis.horizontal) {
                 top -= v.scrollDelta! / 2;
                 top2 -= v.scrollDelta! / 3;
-                top3 -= v.scrollDelta! / 4;
+                top3 -= v.scrollDelta! / 5;
               }
             });
           }
@@ -149,6 +149,20 @@ class _ColetaDadosState extends State<ColetaDados> {
                                 ),
                               ),
                             ),
+                            Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: GestureDetector(
+                                onTap: mob.calcular,
+                                child: Container(
+                                  height: 50,
+                                  width: 50,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(5),
+                                    color: Colors.blue,
+                                  ),
+                                ),
+                              ),
+                            ),
                             Container(
                               padding: EdgeInsets.only(
                                   left: 10, bottom: 10, top: 10),
@@ -171,6 +185,7 @@ class _ColetaDadosState extends State<ColetaDados> {
                                   escreve: mob.escreveCustoTanquePeixe,
                                   title:
                                       "Custo com Tanque (Caixa) para criação dos Peixes",
+                                  hiden: mob.custoTanquePeixe,
                                 );
                               }),
                             ),
@@ -182,6 +197,7 @@ class _ColetaDadosState extends State<ColetaDados> {
                                   erro: mob.booCustoMaterialHidraulico,
                                   escreve: mob.escreveCustoMaterialHidraulico,
                                   title: "Custo com material Hidráulico",
+                                  hiden: mob.custoMaterialHidraulico,
                                 );
                               }),
                             ),
@@ -193,6 +209,7 @@ class _ColetaDadosState extends State<ColetaDados> {
                                   erro: mob.booCustoMaterialEletrico,
                                   escreve: mob.escreveCustoMaterialEletrico,
                                   title: "Custo com Material elétrico",
+                                  hiden: mob.custoMaterialEletrico,
                                 );
                               }),
                             ),
@@ -204,6 +221,7 @@ class _ColetaDadosState extends State<ColetaDados> {
                                   erro: mob.booCustoMaterialAltomacao,
                                   escreve: mob.escreveCustoMaterialAltomacao,
                                   title: "Custo com  material de automação",
+                                  hiden: mob.custoMaterialAltomacao,
                                 );
                               }),
                             ),
@@ -215,6 +233,7 @@ class _ColetaDadosState extends State<ColetaDados> {
                                   erro: mob.booCustoFixoExtra,
                                   escreve: mob.escreveCustoFixoExtra,
                                   title: "Custos Fixos Extras",
+                                  hiden: mob.custoFixoExtra,
                                 );
                               }),
                             ),
@@ -246,6 +265,7 @@ class _ColetaDadosState extends State<ColetaDados> {
                                   erro: mob.booCustoEnergia,
                                   escreve: mob.escreveCustoEnergia,
                                   title: "Custo com Energia",
+                                  hiden: mob.custoEnergia,
                                 );
                               }),
                             ),
@@ -279,6 +299,7 @@ class _ColetaDadosState extends State<ColetaDados> {
                                     erro: mob.booProducaoPeixe,
                                     escreve: mob.escreveProducaoPeixe,
                                     title: "Ciclo de produção peixe",
+                                    hiden: mob.producaoPeixe,
                                   );
                                 }),
                               ),
@@ -291,6 +312,7 @@ class _ColetaDadosState extends State<ColetaDados> {
                                   erro: mob.booProducaoAlface,
                                   escreve: mob.escreveProducaoAlface,
                                   title: "Ciclo de produção alface",
+                                  hiden: mob.producaoAlface,
                                 );
                               }),
                             ),
@@ -303,6 +325,7 @@ class _ColetaDadosState extends State<ColetaDados> {
                                   escreve: mob.escreveCiclosProducaoPeixeAno,
                                   title:
                                       "Número de ciclos de produção de peixe/ano",
+                                  hiden: mob.ciclosProducaoPeixeAno,
                                 );
                               }),
                             ),
@@ -315,6 +338,7 @@ class _ColetaDadosState extends State<ColetaDados> {
                                   escreve: mob.escreveCiclosProducaoAlfaceAno,
                                   title:
                                       "Número de ciclos de produção de alface/ano",
+                                  hiden: mob.ciclosProducaoAlfaceAno,
                                 );
                               }),
                             ),
@@ -326,6 +350,7 @@ class _ColetaDadosState extends State<ColetaDados> {
                                   erro: mob.booNumeroPeixeCiclo,
                                   escreve: mob.escreveNumeroPeixeCiclo,
                                   title: "Número de peixes/ciclo",
+                                  hiden: mob.numeroPeixeCiclo,
                                 );
                               }),
                             ),
@@ -337,6 +362,7 @@ class _ColetaDadosState extends State<ColetaDados> {
                                   erro: mob.booNumeroAlfaceCiclo,
                                   escreve: mob.escreveNumeroAlfaceCiclo,
                                   title: "Número de plantas/ciclo",
+                                  hiden: mob.numeroAlfaceCiclo,
                                 );
                               }),
                             ),
@@ -350,6 +376,7 @@ class _ColetaDadosState extends State<ColetaDados> {
                                       .escreveUnidadeComercializadaCicloAlface,
                                   title:
                                       "Unidade comercializada/ciclo de alface",
+                                  hiden: mob.unidadeComercializadaCicloAlface,
                                 );
                               }),
                             ),
@@ -364,6 +391,8 @@ class _ColetaDadosState extends State<ColetaDados> {
                                       .escreveNumeroProdutosComercializadoCicloAlface,
                                   title:
                                       "Número de produtos comercializado/ciclo de alface",
+                                  hiden: mob
+                                      .numeroProdutosComercializadoCicloAlface,
                                 );
                               }),
                             ),
@@ -377,6 +406,7 @@ class _ColetaDadosState extends State<ColetaDados> {
                                       .escreveUnidadeComercializadaCicloPeixe,
                                   title:
                                       "Unidade comercializada/ciclo de peixe",
+                                  hiden: mob.unidadeComercializadaCicloPeixe,
                                 );
                               }),
                             ),
@@ -388,6 +418,7 @@ class _ColetaDadosState extends State<ColetaDados> {
                                   erro: mob.booPrecoPeixe,
                                   escreve: mob.escrevePrecoPeixe,
                                   title: "Preço de venda peixe",
+                                  hiden: mob.precoPeixe,
                                 );
                               }),
                             ),
@@ -399,6 +430,7 @@ class _ColetaDadosState extends State<ColetaDados> {
                                   erro: mob.booPrecoAlface,
                                   escreve: mob.escrevePrecoAlface,
                                   title: "Preço de venda alface",
+                                  hiden: mob.precoAlface,
                                 );
                               }),
                             ),
@@ -412,6 +444,7 @@ class _ColetaDadosState extends State<ColetaDados> {
                                       mob.escreveTaxaReinvestimentoFluxoCaixa,
                                   title:
                                       "Taxa de reinvestimento dos fluxos de caixa",
+                                  hiden: mob.taxaReinvestimentoFluxoCaixa,
                                 );
                               }),
                             ),

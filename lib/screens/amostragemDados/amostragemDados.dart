@@ -186,12 +186,14 @@ class _AmostragemDadosState extends State<AmostragemDados> {
                                   scrollDirection: Axis.horizontal,
                                   children: [
                                     ...mob.anos_Peixe.map((item) {
-                                      return Cards(ano: item.ano);
+                                      return Cards(
+                                          ano: item.ano,
+                                          anual: item.anual,
+                                          venda: item.venda,
+                                          receita: item.receita,
+                                          total: item.total);
+                                      ;
                                     }).toList(),
-                                    Cards(),
-                                    Cards(),
-                                    Cards(),
-                                    Cards(),
                                   ],
                                 ),
                               );
@@ -223,12 +225,13 @@ class _AmostragemDadosState extends State<AmostragemDados> {
                                   scrollDirection: Axis.horizontal,
                                   children: [
                                     ...mob.anos_Peixe.map((item) {
-                                      return Cards(ano: item.ano);
+                                      return Cards(
+                                          ano: item.ano,
+                                          anual: item.anual,
+                                          venda: item.venda,
+                                          receita: item.receita,
+                                          total: item.total);
                                     }).toList(),
-                                    Cards(),
-                                    Cards(),
-                                    Cards(),
-                                    Cards(),
                                   ],
                                 ),
                               );

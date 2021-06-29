@@ -10,11 +10,13 @@ class CardImput extends StatelessWidget {
   String title;
   final Function escreve;
   bool erro;
+  double hiden;
   CardImput({
     Key? key,
     required this.title,
     required this.escreve,
     required this.erro,
+    required this.hiden,
   }) : super(key: key);
 
   @override
@@ -44,6 +46,7 @@ class CardImput extends StatelessWidget {
             ),
             SizedBox(height: 10),
             TextField(
+              autofocus: true,
               onChanged: (valor) {
                 escreve(valor);
               },
@@ -53,6 +56,7 @@ class CardImput extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
               decoration: InputDecoration(
+                helperText: 'dsd',
                 fillColor: Colors.blueGrey.withAlpha(10),
                 filled: true,
                 isDense: true,

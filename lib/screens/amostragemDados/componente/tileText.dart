@@ -42,7 +42,15 @@ class _TileTextState extends State<TileText> {
           ),
           Padding(
             padding: const EdgeInsets.all(4.0),
+            child: Linha(nome: "Venda de equipamentos", valor: "R150.00"),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(4.0),
             child: Linha(nome: "Total", valor: "R150.00"),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Linha(nome: "Valor residual", valor: "R150.00"),
           ),
         ],
       ),
