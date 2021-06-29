@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:plan3/screens/home.dart';
+import 'package:plan3/screens/load/load.dart';
 
 import 'mobx/mob_dados/mob_dados.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.blueGrey,
         primarySwatch: Colors.blueGrey,
       ),
-      home: HomePage(),
+      home: Load(),
     );
   }
 }

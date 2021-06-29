@@ -182,7 +182,9 @@ class _ColetaDadosState extends State<ColetaDados> {
                               child: Observer(builder: (_) {
                                 return CardImput(
                                   erro: mob.booCustoTanquePeixe,
-                                  escreve: mob.escreveCustoTanquePeixe,
+                                  escreve: (valor) {
+                                    mob.escreveCustoTanquePeixe(valor);
+                                  },
                                   title:
                                       "Custo com Tanque (Caixa) para criação dos Peixes",
                                   hiden: mob.custoTanquePeixe,

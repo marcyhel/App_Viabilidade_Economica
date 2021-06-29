@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:plan3/mobx/mob_dados/mob_dados.dart';
 import 'package:plan3/screens/amostragemDados/componente/cards.dart';
+
+final Mob_dados mob = GetIt.I<Mob_dados>();
 
 class TileText extends StatefulWidget {
   String valor;
@@ -34,23 +38,34 @@ class _TileTextState extends State<TileText> {
           ),
           Padding(
             padding: const EdgeInsets.all(4.0),
-            child: Linha(nome: "Investimento", valor: "R150.00"),
+            child: Linha(
+                nome: "Investimento",
+                valor: mob.investimentoInicial.toStringAsFixed(2)),
           ),
           Padding(
             padding: const EdgeInsets.all(4.0),
-            child: Linha(nome: "Capital de giro", valor: "R150.00"),
+            child: Linha(
+                nome: "Capital de giro",
+                valor: mob.capitalGiro.toStringAsFixed(2)),
           ),
           Padding(
             padding: const EdgeInsets.all(4.0),
-            child: Linha(nome: "Venda de equipamentos", valor: "R150.00"),
+            child: Linha(
+                nome: "Venda de equipamentos",
+                valor: mob.vendaEquipamentos.toStringAsFixed(2)),
           ),
           Padding(
             padding: const EdgeInsets.all(4.0),
-            child: Linha(nome: "Total", valor: "R150.00"),
+            child: Linha(
+                nome: "Total",
+                valor: (mob.investimentoInicial + mob.capitalGiro)
+                    .toStringAsFixed(2)),
           ),
           Padding(
             padding: const EdgeInsets.all(4.0),
-            child: Linha(nome: "Valor residual", valor: "R150.00"),
+            child: Linha(
+                nome: "Valor residual",
+                valor: mob.valorResidual.toStringAsFixed(2)),
           ),
         ],
       ),

@@ -93,6 +93,113 @@ mixin _$Mob_dados on _Mob_dados, Store {
     });
   }
 
+  final _$investimentoInicialAtom =
+      Atom(name: '_Mob_dados.investimentoInicial');
+
+  @override
+  double get investimentoInicial {
+    _$investimentoInicialAtom.reportRead();
+    return super.investimentoInicial;
+  }
+
+  @override
+  set investimentoInicial(double value) {
+    _$investimentoInicialAtom.reportWrite(value, super.investimentoInicial, () {
+      super.investimentoInicial = value;
+    });
+  }
+
+  final _$capitalGiroAtom = Atom(name: '_Mob_dados.capitalGiro');
+
+  @override
+  double get capitalGiro {
+    _$capitalGiroAtom.reportRead();
+    return super.capitalGiro;
+  }
+
+  @override
+  set capitalGiro(double value) {
+    _$capitalGiroAtom.reportWrite(value, super.capitalGiro, () {
+      super.capitalGiro = value;
+    });
+  }
+
+  final _$vendaEquipamentosAtom = Atom(name: '_Mob_dados.vendaEquipamentos');
+
+  @override
+  double get vendaEquipamentos {
+    _$vendaEquipamentosAtom.reportRead();
+    return super.vendaEquipamentos;
+  }
+
+  @override
+  set vendaEquipamentos(double value) {
+    _$vendaEquipamentosAtom.reportWrite(value, super.vendaEquipamentos, () {
+      super.vendaEquipamentos = value;
+    });
+  }
+
+  final _$valorResidualAtom = Atom(name: '_Mob_dados.valorResidual');
+
+  @override
+  double get valorResidual {
+    _$valorResidualAtom.reportRead();
+    return super.valorResidual;
+  }
+
+  @override
+  set valorResidual(double value) {
+    _$valorResidualAtom.reportWrite(value, super.valorResidual, () {
+      super.valorResidual = value;
+    });
+  }
+
+  final _$taxaDesenvestimentoAtom =
+      Atom(name: '_Mob_dados.taxaDesenvestimento');
+
+  @override
+  double get taxaDesenvestimento {
+    _$taxaDesenvestimentoAtom.reportRead();
+    return super.taxaDesenvestimento;
+  }
+
+  @override
+  set taxaDesenvestimento(double value) {
+    _$taxaDesenvestimentoAtom.reportWrite(value, super.taxaDesenvestimento, () {
+      super.taxaDesenvestimento = value;
+    });
+  }
+
+  final _$periodoAnaliseAtom = Atom(name: '_Mob_dados.periodoAnalise');
+
+  @override
+  double get periodoAnalise {
+    _$periodoAnaliseAtom.reportRead();
+    return super.periodoAnalise;
+  }
+
+  @override
+  set periodoAnalise(double value) {
+    _$periodoAnaliseAtom.reportWrite(value, super.periodoAnalise, () {
+      super.periodoAnalise = value;
+    });
+  }
+
+  final _$tmaAtom = Atom(name: '_Mob_dados.tma');
+
+  @override
+  double get tma {
+    _$tmaAtom.reportRead();
+    return super.tma;
+  }
+
+  @override
+  set tma(double value) {
+    _$tmaAtom.reportWrite(value, super.tma, () {
+      super.tma = value;
+    });
+  }
+
   final _$producaoPeixeAtom = Atom(name: '_Mob_dados.producaoPeixe');
 
   @override
@@ -378,6 +485,23 @@ mixin _$Mob_dados on _Mob_dados, Store {
   set custoTanquePeixe(double value) {
     _$custoTanquePeixeAtom.reportWrite(value, super.custoTanquePeixe, () {
       super.custoTanquePeixe = value;
+    });
+  }
+
+  final _$taxaReinvestimentoFluxoCaixaAtom =
+      Atom(name: '_Mob_dados.taxaReinvestimentoFluxoCaixa');
+
+  @override
+  double get taxaReinvestimentoFluxoCaixa {
+    _$taxaReinvestimentoFluxoCaixaAtom.reportRead();
+    return super.taxaReinvestimentoFluxoCaixa;
+  }
+
+  @override
+  set taxaReinvestimentoFluxoCaixa(double value) {
+    _$taxaReinvestimentoFluxoCaixaAtom
+        .reportWrite(value, super.taxaReinvestimentoFluxoCaixa, () {
+      super.taxaReinvestimentoFluxoCaixa = value;
     });
   }
 
@@ -673,6 +797,23 @@ mixin _$Mob_dados on _Mob_dados, Store {
     });
   }
 
+  final _$booTaxaReinvestimentoFluxoCaixaAtom =
+      Atom(name: '_Mob_dados.booTaxaReinvestimentoFluxoCaixa');
+
+  @override
+  bool get booTaxaReinvestimentoFluxoCaixa {
+    _$booTaxaReinvestimentoFluxoCaixaAtom.reportRead();
+    return super.booTaxaReinvestimentoFluxoCaixa;
+  }
+
+  @override
+  set booTaxaReinvestimentoFluxoCaixa(bool value) {
+    _$booTaxaReinvestimentoFluxoCaixaAtom
+        .reportWrite(value, super.booTaxaReinvestimentoFluxoCaixa, () {
+      super.booTaxaReinvestimentoFluxoCaixa = value;
+    });
+  }
+
   final _$randomAsyncAction = AsyncAction('_Mob_dados.random');
 
   @override
@@ -681,6 +822,17 @@ mixin _$Mob_dados on _Mob_dados, Store {
   }
 
   final _$_Mob_dadosActionController = ActionController(name: '_Mob_dados');
+
+  @override
+  void calcular() {
+    final _$actionInfo =
+        _$_Mob_dadosActionController.startAction(name: '_Mob_dados.calcular');
+    try {
+      return super.calcular();
+    } finally {
+      _$_Mob_dadosActionController.endAction(_$actionInfo);
+    }
+  }
 
   @override
   void escreveProducaoPeixe(String valor) {
@@ -881,6 +1033,17 @@ mixin _$Mob_dados on _Mob_dados, Store {
   }
 
   @override
+  void escreveTaxaReinvestimentoFluxoCaixa(String valor) {
+    final _$actionInfo = _$_Mob_dadosActionController.startAction(
+        name: '_Mob_dados.escreveTaxaReinvestimentoFluxoCaixa');
+    try {
+      return super.escreveTaxaReinvestimentoFluxoCaixa(valor);
+    } finally {
+      _$_Mob_dadosActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   void setData(int valor) {
     final _$actionInfo =
         _$_Mob_dadosActionController.startAction(name: '_Mob_dados.setData');
@@ -910,6 +1073,13 @@ tuto: ${tuto},
 data: ${data},
 anos_Peixe: ${anos_Peixe},
 dados_grafico: ${dados_grafico},
+investimentoInicial: ${investimentoInicial},
+capitalGiro: ${capitalGiro},
+vendaEquipamentos: ${vendaEquipamentos},
+valorResidual: ${valorResidual},
+taxaDesenvestimento: ${taxaDesenvestimento},
+periodoAnalise: ${periodoAnalise},
+tma: ${tma},
 producaoPeixe: ${producaoPeixe},
 producaoAlface: ${producaoAlface},
 ciclosProducaoPeixeAno: ${ciclosProducaoPeixeAno},
@@ -928,6 +1098,7 @@ custoMaterialEletrico: ${custoMaterialEletrico},
 custoMaterialAltomacao: ${custoMaterialAltomacao},
 custoFixoExtra: ${custoFixoExtra},
 custoTanquePeixe: ${custoTanquePeixe},
+taxaReinvestimentoFluxoCaixa: ${taxaReinvestimentoFluxoCaixa},
 booProducaoPeixe: ${booProducaoPeixe},
 booProducaoAlface: ${booProducaoAlface},
 booCiclosProducaoPeixeAno: ${booCiclosProducaoPeixeAno},
@@ -946,6 +1117,7 @@ booCustoMaterialEletrico: ${booCustoMaterialEletrico},
 booCustoMaterialAltomacao: ${booCustoMaterialAltomacao},
 booCustoFixoExtra: ${booCustoFixoExtra},
 booCustoTanquePeixe: ${booCustoTanquePeixe},
+booTaxaReinvestimentoFluxoCaixa: ${booTaxaReinvestimentoFluxoCaixa},
 graf: ${graf}
     ''';
   }

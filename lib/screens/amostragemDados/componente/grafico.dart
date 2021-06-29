@@ -28,12 +28,11 @@ class _GraficoState extends State<Grafico> {
   List<dynamic> dados;
   _GraficoState(this.dados);
   List<dynamic> data3 = [
-    _SalesData('3', -30),
-    _SalesData('Feb2', 20),
-    _SalesData('Mar2', 30),
-    _SalesData('Apr2', 28),
-    _SalesData('May2', 30),
-    _SalesData('Jan1', 30),
+    _SalesData('Ano 1', -30),
+    _SalesData('Ano 2', 20),
+    _SalesData('Ano 3', 30),
+    _SalesData('Ano 4', 28),
+    _SalesData('Ano 5', 30),
   ];
   @override
   Widget build(BuildContext context) {
@@ -48,11 +47,10 @@ class _GraficoState extends State<Grafico> {
           ]),
       margin: EdgeInsets.all(10),
       child: SfCartesianChart(
-          primaryXAxis: CategoryAxis(title: AxisTitle(text: 'Tempo (min)')),
-          primaryYAxis: NumericAxis(
-              title: AxisTitle(text: 'Velocidade de Infiltração (mm/h)')),
+          primaryXAxis: CategoryAxis(title: AxisTitle(text: 'Anos')),
+          primaryYAxis: NumericAxis(title: AxisTitle(text: 'VPL (R\$)')),
           // Chart title
-          title: ChartTitle(text: 'Velocidade de Infiltração'),
+          title: ChartTitle(text: 'Fluxo de Caixa Livre (FCL)'),
           // Enable legend
           legend: Legend(
               isVisible: true,
@@ -70,7 +68,7 @@ class _GraficoState extends State<Grafico> {
               dataSource: dados.cast<dynamic>(),
               xValueMapper: (dynamic sales, _) => sales.year,
               yValueMapper: (dynamic sales, _) => sales.sales,
-              name: 'Kostiakov',
+              name: 'Fluxo de Caixa',
               color: Colors.blueGrey,
               // Enable data label
               dataLabelSettings: DataLabelSettings(isVisible: false),

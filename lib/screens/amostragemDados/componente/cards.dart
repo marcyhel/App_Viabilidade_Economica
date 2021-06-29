@@ -33,7 +33,7 @@ class Linha extends StatelessWidget {
             ),
           ),
           Text(
-            valor,
+            "R\$ $valor",
             style: TextStyle(
               color: Colors.black.withAlpha(170),
               fontWeight: FontWeight.bold,
@@ -86,10 +86,14 @@ class Cards extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Linha(nome: "Prod. Anual (Un.)", valor: anual.toString()),
-                Linha(nome: "Preço de Venda (S/Un.)", valor: venda.toString()),
-                Linha(nome: "Receita (RS)", valor: receita.toString()),
-                Linha(nome: "Custo Total Anual", valor: total.toString()),
+                Linha(
+                    nome: "Prod. Anual (Un.)", valor: anual.toStringAsFixed(2)),
+                Linha(
+                    nome: "Preço de Venda (S/Un.)",
+                    valor: venda.toStringAsFixed(2)),
+                Linha(nome: "Receita (RS)", valor: receita.toStringAsFixed(2)),
+                Linha(
+                    nome: "Custo Total Anual", valor: total.toStringAsFixed(2)),
               ],
             ),
           )),

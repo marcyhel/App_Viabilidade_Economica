@@ -27,12 +27,14 @@ abstract class _Mob_dados with Store {
     Anos("ano 2"),
     Anos("ano 3"),
     Anos("ano 4"),
+    Anos("ano 5"),
   ]);
   var anos_Alface = ObservableList<Anos>.of([
     Anos("ano 1"),
     Anos("ano 2"),
     Anos("ano 3"),
     Anos("ano 4"),
+    Anos("ano 5"),
   ]);
   var cont = 5;
   @observable
@@ -51,6 +53,7 @@ abstract class _Mob_dados with Store {
 
   @action
   void calcular() {
+    print("calc");
     investimentoInicial = custoTanquePeixe +
         custoMaterialEletrico +
         custoMaterialHidraulico +
@@ -378,12 +381,12 @@ abstract class _Mob_dados with Store {
     ]);
 
     dados_grafico = ObservableList<SalesData>.of([
-      SalesData('3', Random().nextInt(20) - 10),
-      SalesData('Feb2', Random().nextInt(20) - 10),
-      SalesData('Mar2', Random().nextInt(20) - 10),
-      SalesData('Apr2', Random().nextInt(20) - 10),
-      SalesData('May2', Random().nextInt(20) - 10),
-      SalesData('Jan1', Random().nextInt(20) - 10),
+      SalesData('Ano 1', Random().nextInt(100) - 50),
+      SalesData('Ano 2', Random().nextInt(100) - 50),
+      SalesData('Ano 3', Random().nextInt(100) - 50),
+      SalesData('Ano 4', Random().nextInt(100) - 50),
+      SalesData('Ano 5', Random().nextInt(100) - 50),
+      SalesData('Ano 6', Random().nextInt(100) - 50),
     ]);
     chartSeriesController?.updateDataSource(addedDataIndexes: [0]);
     print(dados_grafico[0].sales);
