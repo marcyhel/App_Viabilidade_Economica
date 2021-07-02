@@ -78,6 +78,36 @@ mixin _$Mob_dados on _Mob_dados, Store {
     });
   }
 
+  final _$anos_AlfaceAtom = Atom(name: '_Mob_dados.anos_Alface');
+
+  @override
+  ObservableList<Anos> get anos_Alface {
+    _$anos_AlfaceAtom.reportRead();
+    return super.anos_Alface;
+  }
+
+  @override
+  set anos_Alface(ObservableList<Anos> value) {
+    _$anos_AlfaceAtom.reportWrite(value, super.anos_Alface, () {
+      super.anos_Alface = value;
+    });
+  }
+
+  final _$anos_GeralAtom = Atom(name: '_Mob_dados.anos_Geral');
+
+  @override
+  ObservableList<AnosGeral> get anos_Geral {
+    _$anos_GeralAtom.reportRead();
+    return super.anos_Geral;
+  }
+
+  @override
+  set anos_Geral(ObservableList<AnosGeral> value) {
+    _$anos_GeralAtom.reportWrite(value, super.anos_Geral, () {
+      super.anos_Geral = value;
+    });
+  }
+
   final _$dados_graficoAtom = Atom(name: '_Mob_dados.dados_grafico');
 
   @override
@@ -824,6 +854,17 @@ mixin _$Mob_dados on _Mob_dados, Store {
   final _$_Mob_dadosActionController = ActionController(name: '_Mob_dados');
 
   @override
+  void calcularGeral() {
+    final _$actionInfo = _$_Mob_dadosActionController.startAction(
+        name: '_Mob_dados.calcularGeral');
+    try {
+      return super.calcularGeral();
+    } finally {
+      _$_Mob_dadosActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   void calcular() {
     final _$actionInfo =
         _$_Mob_dadosActionController.startAction(name: '_Mob_dados.calcular');
@@ -1072,6 +1113,8 @@ chartSeriesController: ${chartSeriesController},
 tuto: ${tuto},
 data: ${data},
 anos_Peixe: ${anos_Peixe},
+anos_Alface: ${anos_Alface},
+anos_Geral: ${anos_Geral},
 dados_grafico: ${dados_grafico},
 investimentoInicial: ${investimentoInicial},
 capitalGiro: ${capitalGiro},

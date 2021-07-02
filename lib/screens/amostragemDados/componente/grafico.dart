@@ -33,6 +33,7 @@ class _GraficoState extends State<Grafico> {
     _SalesData('Ano 3', 30),
     _SalesData('Ano 4', 28),
     _SalesData('Ano 5', 30),
+    _SalesData('Ano 6', 30),
   ];
   @override
   Widget build(BuildContext context) {
@@ -40,7 +41,7 @@ class _GraficoState extends State<Grafico> {
     return Container(
       decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
                 color: Colors.black45, offset: Offset(2, 3), blurRadius: 10)

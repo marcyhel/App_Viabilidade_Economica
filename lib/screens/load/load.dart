@@ -16,14 +16,17 @@ class _LoadState extends State<Load> {
   @override
   initState() {
     print("load");
-    mob.calcular();
-    mob.random();
+
     aguarda();
     super.initState();
   }
 
   void aguarda() async {
+    await mob.carregarDados();
+    mob.calcular();
+    mob.random();
     await Future.delayed(Duration(seconds: 2));
+    Navigator.pop(context);
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => HomePage()),
@@ -34,11 +37,33 @@ class _LoadState extends State<Load> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Fade(
-        inverte: true,
-        delay: 1600,
-        mili: 500,
-        child: Container(
-          color: Colors.blueGrey[900],
+        delay: 0,
+        mili: 300,
+        child: Fade(
+          inverte: true,
+          delay: 1300,
+          mili: 500,
+          child: Container(
+            color: Color(0xff052F43),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 100,
+                    height: 100,
+                    color: Colors.amber,
+                  ),
+                  SizedBox(
+                    height: 100,
+                  ),
+                  CircularProgressIndicator(
+                    color: Color(0xff0AB855),
+                  )
+                ],
+              ),
+            ),
+          ),
         ),
       ),
     );

@@ -38,6 +38,9 @@ dependencies:
   flutter_echarts: ^2.1.0
   charts_flutter: ^0.10.0
 
+  hive: ^1.4.4+1
+  hive_flutter: ^0.3.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -63,6 +66,7 @@ flutter:
     - image/alface.png
     - image/bolhas.png
     - image/one.png
+    - image/cena.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

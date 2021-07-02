@@ -4,24 +4,26 @@ class Linha extends StatelessWidget {
   String nome;
   String valor;
   double larg = 250;
+  bool destacado = false;
 
   Linha({
     Key? key,
     required this.nome,
     required this.valor,
     this.larg = 227,
+    this.destacado = false,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width / 1.5,
+      width: larg,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             nome,
             style: TextStyle(
-              color: Colors.black45,
+              color: (destacado) ? Colors.black.withAlpha(190) : Colors.black45,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -35,7 +37,9 @@ class Linha extends StatelessWidget {
           Text(
             "R\$ $valor",
             style: TextStyle(
-              color: Colors.black.withAlpha(170),
+              color: (destacado)
+                  ? Colors.black.withAlpha(230)
+                  : Colors.black.withAlpha(170),
               fontWeight: FontWeight.bold,
             ),
           ),

@@ -47,8 +47,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return HiddenDrawerMenu(
-      backgroundColorMenu: Colors.blueGrey.shade800,
-      backgroundColorAppBar: Colors.blueGrey.shade700,
+      backgroundColorMenu: Color(0xff042433).withAlpha(50),
+      backgroundColorAppBar: Color(0xff042433), //Colors.blueGrey.shade700,
       screens: itens,
       //    typeOpen: TypeOpen.FROM_RIGHT,
       //    disableAppBarDefault: false,
@@ -56,13 +56,14 @@ class _HomePageState extends State<HomePage> {
       //    enableCornerAnimin: true,
       //    slidePercent: 80.0,
       //    verticalScalePercent: 80.0,
+      isTitleCentered: true,
       contentCornerRadius: 20.0,
       //    iconMenuAppBar: Icon(Icons.menu),
       //    backgroundContent: DecorationImage((image: ExactAssetImage('assets/bg_news.jpg'),fit: BoxFit.cover),
       //    whithAutoTittleName: true,
-      //    styleAutoTittleName: TextStyle(color: Colors.red),
+      styleAutoTittleName: TextStyle(color: Colors.white),
       //    actionsAppBar: <Widget>[],
-      //    backgroundColorContent: Colors.blue,
+      //   backgroundColorContent: Colors.white,
       //    elevationAppBar: 4.0,
       //    tittleAppBar: Center(child: Icon(Icons.ac_unit),),
       //    enableShadowItensMenu: true,

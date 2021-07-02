@@ -39,33 +39,43 @@ class _TileTextState extends State<TileText> {
           Padding(
             padding: const EdgeInsets.all(4.0),
             child: Linha(
-                nome: "Investimento",
-                valor: mob.investimentoInicial.toStringAsFixed(2)),
+              nome: "Investimento",
+              valor: mob.investimentoInicial.toStringAsFixed(2),
+              larg: 270,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(4.0),
             child: Linha(
-                nome: "Capital de giro",
-                valor: mob.capitalGiro.toStringAsFixed(2)),
+              nome: "Capital de giro",
+              valor: mob.capitalGiro.toStringAsFixed(2),
+              larg: 270,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(4.0),
             child: Linha(
-                nome: "Venda de equipamentos",
-                valor: mob.vendaEquipamentos.toStringAsFixed(2)),
+              nome: "Venda de equipamentos",
+              valor: mob.vendaEquipamentos.toStringAsFixed(2),
+              larg: 270,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(4.0),
             child: Linha(
-                nome: "Total",
-                valor: (mob.investimentoInicial + mob.capitalGiro)
-                    .toStringAsFixed(2)),
+              nome: "Total",
+              valor: (mob.investimentoInicial + mob.capitalGiro)
+                  .toStringAsFixed(2),
+              larg: 270,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(4.0),
             child: Linha(
-                nome: "Valor residual",
-                valor: mob.valorResidual.toStringAsFixed(2)),
+              nome: "Valor residual",
+              valor: mob.valorResidual.toStringAsFixed(2),
+              larg: 270,
+            ),
           ),
         ],
       ),

@@ -51,7 +51,7 @@ class _ColetaDadosState extends State<ColetaDados> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Color(0xff063943),
       body: NotificationListener(
         onNotification: (v) {
           if (v is ScrollUpdateNotification) {
@@ -146,20 +146,6 @@ class _ColetaDadosState extends State<ColetaDados> {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(5),
                                   color: Colors.black26,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(20.0),
-                              child: GestureDetector(
-                                onTap: mob.calcular,
-                                child: Container(
-                                  height: 50,
-                                  width: 50,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(5),
-                                    color: Colors.blue,
-                                  ),
                                 ),
                               ),
                             ),
@@ -450,7 +436,7 @@ class _ColetaDadosState extends State<ColetaDados> {
                                 );
                               }),
                             ),
-                            SizedBox(height: 50),
+                            SizedBox(height: 100),
                           ],
                         );
                       }),
@@ -458,6 +444,28 @@ class _ColetaDadosState extends State<ColetaDados> {
                   ),
                 ],
               ),
+              Positioned(
+                bottom: 0,
+                child: Material(
+                  color: Color(0xff002F61),
+                  child: InkWell(
+                    onTap: mob.calcular,
+                    child: Container(
+                      //color: Colors.amber,
+                      width: MediaQuery.of(context).size.width,
+                      height: 70,
+                      child: Center(
+                          child: Text(
+                        "Calcular",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 30),
+                      )),
+                    ),
+                  ),
+                ),
+              )
             ],
           );
         }),

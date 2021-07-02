@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
 import 'package:plan3/screens/home.dart';
 import 'package:plan3/screens/load/load.dart';
 
 import 'mobx/mob_dados/mob_dados.dart';
 
-void main() {
-  singletonsApp();
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  var box = await Hive.openBox('minhaCaixa1');
+  singletonsApp(box);
   runApp(MyApp());
 }
 
-void singletonsApp() {
-  GetIt.I.registerSingleton(Mob_dados());
+void singletonsApp(box) {
+  GetIt.I.registerSingleton(Mob_dados(box));
 }
 
 class MyApp extends StatelessWidget {
@@ -21,7 +27,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.blueGrey,
+        scaffoldBackgroundColor: Color(0xff031926),
         primarySwatch: Colors.blueGrey,
       ),
       home: Load(),
