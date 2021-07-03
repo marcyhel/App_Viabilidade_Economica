@@ -446,22 +446,74 @@ class _ColetaDadosState extends State<ColetaDados> {
               ),
               Positioned(
                 bottom: 0,
-                child: Material(
-                  color: Color(0xff002F61),
-                  child: InkWell(
-                    onTap: mob.calcular,
-                    child: Container(
-                      //color: Colors.amber,
-                      width: MediaQuery.of(context).size.width,
-                      height: 70,
-                      child: Center(
-                          child: Text(
-                        "Calcular",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                            fontSize: 30),
-                      )),
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                          offset: Offset(2, 3),
+                          blurRadius: 15,
+                          color: Colors.black26),
+                    ],
+                  ),
+                  child: Center(
+                    child: Material(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Color(0xff002F61),
+                      child: InkWell(
+                        splashColor: Colors.blueAccent,
+                        borderRadius: BorderRadius.circular(20),
+                        onTap: () {
+                          mob.calcular();
+
+                          final snackBar = SnackBar(
+                            backgroundColor: Color(0xff06684D),
+                            elevation: 0,
+                            behavior: SnackBarBehavior.floating,
+                            margin: EdgeInsets.only(bottom: 60),
+                            duration: Duration(milliseconds: 500),
+                            content: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'Calculado',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                        fontSize: 18),
+                                  ),
+                                  SizedBox(
+                                    width:
+                                        MediaQuery.of(context).size.width / 2,
+                                  ),
+                                  Icon(
+                                    Icons.check,
+                                    color: Colors.white,
+                                    size: 30,
+                                  )
+                                ]),
+                          );
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          //color: Colors.amber,
+                          width: MediaQuery.of(context).size.width / 1.5,
+                          height: 45,
+                          child: Center(
+                              child: Text(
+                            "Calcular",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 30),
+                          )),
+                        ),
+                      ),
                     ),
                   ),
                 ),

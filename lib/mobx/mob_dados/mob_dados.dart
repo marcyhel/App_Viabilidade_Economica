@@ -17,7 +17,7 @@ abstract class _Mob_dados with Store {
       print(custoTanquePeixe);
     });
     print(tuto);
-    //carregarDados();
+    carregarDados();
   }
 
   Future<void> carregarDados() async {

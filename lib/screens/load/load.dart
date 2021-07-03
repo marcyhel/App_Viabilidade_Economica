@@ -22,7 +22,7 @@ class _LoadState extends State<Load> {
   }
 
   void aguarda() async {
-    await mob.carregarDados();
+    //await mob.carregarDados();
     mob.calcular();
     mob.random();
     await Future.delayed(Duration(seconds: 2));
