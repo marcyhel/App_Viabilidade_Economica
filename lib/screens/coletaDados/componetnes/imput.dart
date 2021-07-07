@@ -48,6 +48,7 @@ class CardImput extends StatelessWidget {
           ),
           SizedBox(height: 10),
           TextFormField(
+            keyboardType: TextInputType.number,
             initialValue: (hiden == 0) ? "" : hiden.toString(),
             //controller: _contro,
             onChanged: (valor) {
