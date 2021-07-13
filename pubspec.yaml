@@ -75,6 +75,10 @@ flutter:
     - image/pexe.jpeg
 
     - image/party.jpeg
+    - image/1x/fundo_agua.png
+    - image/1x/fundo_alga.png
+    - image/1x/fundo_peixe.png
+    - image/1x/raja.png
 
   #   - images/a_dot_ham.jpeg
 

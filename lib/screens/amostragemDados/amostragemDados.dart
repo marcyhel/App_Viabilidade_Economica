@@ -42,96 +42,79 @@ class _AmostragemDadosState extends State<AmostragemDados> {
           return Stack(
             children: [
               Positioned(
-                left: -50,
-                top: top2,
+                top: -10 + top2 / 3,
+                left: -10,
                 child: Fade(
                   delay: 1000,
                   mili: 400,
                   child: Container(
-                    margin: EdgeInsets.only(left: 0, top: 80),
-                    height: 150,
+                    margin: EdgeInsets.only(left: 0, top: 0),
+                    height: 300,
                     child: Image.asset(
-                      'image/alga.png',
+                      'image/1x/fundo_agua.png',
                       fit: BoxFit.fill,
-                      color: Color(0xff06684D),
+                      //color: Color(0xff078F4A),
                       //colorBlendMode: BlendMode.multiply,
                     ),
                   ),
                 ),
               ),
               Positioned(
-                top: top2 * 1.2,
+                top: top2 / 2,
                 child: Fade(
                   delay: 1000,
                   mili: 400,
                   child: Container(
-                    margin: EdgeInsets.only(left: 20, top: 120),
-                    height: 150,
+                    margin: EdgeInsets.only(top: 0),
+                    height: 300,
                     child: Image.asset(
-                      'image/alga.png',
+                      'image/1x/raja.png',
                       fit: BoxFit.fill,
-                      color: Color(0xff078F4A),
+                      //color: Colors.blueGrey[700],
                       //colorBlendMode: BlendMode.multiply,
                     ),
                   ),
                 ),
               ),
               Positioned(
-                top: top2,
-                right: -50,
+                top: top / 2,
                 child: Fade(
                   delay: 1000,
                   mili: 400,
                   child: Container(
-                    margin: EdgeInsets.only(top: 100),
-                    height: 130,
+                    margin: EdgeInsets.only(left: 0, top: 0),
+                    height: 200,
                     child: Image.asset(
-                      'image/alface.png',
+                      'image/1x/fundo_alga.png',
                       fit: BoxFit.fill,
-                      color: Colors.blueGrey[700],
+                      //color: Color(0xffCBA432),
                       //colorBlendMode: BlendMode.multiply,
                     ),
                   ),
                 ),
               ),
               Positioned(
-                top: top,
+                top: (top),
                 child: Fade(
                   delay: 1000,
                   mili: 400,
                   child: Container(
-                    margin: EdgeInsets.only(left: 50, top: 70),
-                    height: 100,
-                    child: Image.asset(
-                      'image/fish.png',
-                      fit: BoxFit.fill,
-                      color: Color(0xffCBA432),
-                      //colorBlendMode: BlendMode.multiply,
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                top: -50 + (top * 1.3),
-                child: Fade(
-                  delay: 1000,
-                  mili: 400,
-                  child: Container(
-                    width: MediaQuery.of(context).size.width,
+                    //width: MediaQuery.of(context).size.width,
                     margin: EdgeInsets.only(
-                      left: 0,
+                      left: 50,
+                      top: 100,
                     ),
-                    height: MediaQuery.of(context).size.width / 2.1,
+                    height: 50,
                     child: Image.asset(
-                      'image/bolhas.png',
+                      'image/1x/fundo_peixe.png',
                       fit: BoxFit.fill,
-                      color: Colors.blueGrey[300],
+                      // color: Colors.blueGrey[300],
                       //colorBlendMode: BlendMode.multiply,
                     ),
                   ),
                 ),
               ),
-              Positioned(
+              /* Positioned(
                 top: -50 + (top * 1.5),
                 child: Fade(
                   delay: 1000,
@@ -150,7 +133,7 @@ class _AmostragemDadosState extends State<AmostragemDados> {
                     ),
                   ),
                 ),
-              ),
+              ),*/
               Positioned(
                 top: 490 + (top * 1.5),
                 child: Fade(

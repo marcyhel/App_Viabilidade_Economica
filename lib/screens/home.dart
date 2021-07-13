@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
       ScreenHiddenDrawer(
         ItemHiddenMenu(
           colorLineSelected: Colors.amber,
-          name: "Sobre nós",
+          name: "Sobre o Projeto",
           baseStyle:
               TextStyle(color: Colors.white.withOpacity(0.8), fontSize: 28.0),
           selectedStyle:
