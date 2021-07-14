@@ -7,6 +7,7 @@ import 'package:plan3/screens/coletaDados/coletaDados.dart';
 import 'package:carousel_images/carousel_images.dart';
 import 'package:plan3/screens/sobre/sobre_nos.dart';
 
+
 import 'coletaDados/componetnes/imput.dart';
 import 'componentes/fade.dart';
 

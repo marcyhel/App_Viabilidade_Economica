@@ -12,7 +12,7 @@ class Paragrafo extends StatelessWidget {
         Text(
           "v) ",
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.black54,
             fontSize: 20,
           ),
         ),
@@ -20,7 +20,7 @@ class Paragrafo extends StatelessWidget {
           child: Text(
             " projetar os fluxos de caixa operacionais, tais como, preços de venda, quantidade vendida, custos fixos, com a implantação do sistema de produção de peixes associado a produção de alface, denominado sistema aquapônico, e os custos variáveis com manutenção e operacionalização envolvidos no processo produtivo;",
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black54,
               fontSize: 20,
             ),
           ),
